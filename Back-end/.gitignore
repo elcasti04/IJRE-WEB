@@ -1,0 +1,38 @@
+# Node modules
+node_modules/
+**/node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Environment variables (secrets)
+.env
+.env.*
+
+# Uploaded files (no versionar)
+uploads/
+uploads/**
+
+# Build / output
+dist/
+build/
+
+# Database files
+*.sqlite
+*.sqlite3
+
+# Coverage
+coverage/
+
+# IDEs and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Misc
+.env.local
+.eslintcache
