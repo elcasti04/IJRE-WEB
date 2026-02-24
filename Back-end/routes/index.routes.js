@@ -5,9 +5,9 @@ import infoRouter from './api/info.routes.js';
 import lideresRouter from './api/lideres.routes.js';
 import nosotrosRouter from './api/nosotros.routes.js';
 import contactoRouter from './api/contacto.routes.js';
-import donacioneRouter from './api/donaciones.routes.js';
 import loginRouter from './api/login.routes.js';
 import adminRouter from './api/admin.routes.js';
+import galeriaRoutes from './api/galeria.routes.js'
 
 const router = Router();
 
@@ -23,10 +23,13 @@ router.use('/about', nosotrosRouter);
 
 router.use('/contacto', contactoRouter);
 
-router.use('/donaciones', donacioneRouter);
-
 router.use('/auth', loginRouter);
 
 router.use('/admin', adminRouter);
+
+router.use('/galeria', galeriaRoutes)
+
+
+
 
 export default router;

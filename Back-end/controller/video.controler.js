@@ -1,11 +1,12 @@
 import { google } from 'googleapis';
+import catchError from '../middlewares/catchError.js';
 
 const youtube = google.youtube({
 	version: 'v3',
 	auth: process.env.YOUTUBE_API_KEY, 
 });
 
-const getVideos = async (req, res) => {
+const getVideos = catchError(async (req, res) => {
 	try {
 		const channelResponse = await youtube.channels.list({
 			part: 'id',
@@ -46,6 +47,6 @@ const getVideos = async (req, res) => {
 				'No se pudo obtener los videos. Verifica la clave de API o intenta más tarde.',
 		});
 	}
-};
+});
 
 export default getVideos;

@@ -1,6 +1,7 @@
+import catchError from '../middlewares/catchError.js';
 import { Lideres } from '../models/lideres.model.js';
 
-export const getLideres = async (req, res) => {
+export const getLideres = catchError(async (req, res) => {
 	try {
 		const liders = await Lideres.findAll({
 			attributes: ['id', 'nombre', 'cargo', 'image'],
@@ -9,9 +10,9 @@ export const getLideres = async (req, res) => {
 	} catch (error) {
 		res.status(500).json({ message: 'Error al obtener líderes' });
 	}
-};
+});
 
-export const getOneLider = async (req, res) => {
+export const getOneLider = catchError(async (req, res) => {
 	try {
 		const { id } = req.params;
 		const lider = await Lideres.findByPk(id);
@@ -22,9 +23,9 @@ export const getOneLider = async (req, res) => {
 	} catch (error) {
 		res.status(500).json({ message: 'Error al buscar líder' });
 	}
-};
+});
 
-export const createLider = async (req, res) => {
+export const createLider = catchError(async (req, res) => {
 	try {
 		const { nombre, cargo, info } = req.body;
 		
@@ -36,9 +37,9 @@ export const createLider = async (req, res) => {
 	} catch (error) {
 		res.status(500).json({ message: 'Error al crear líder' });
 	}
-};
+});
 
-export const updateLider = async (req, res) => {
+export const updateLider = catchError(async (req, res) => {
 	try {
 		const { id } = req.params;
 		const { nombre, cargo, info } = req.body;
@@ -60,9 +61,9 @@ export const updateLider = async (req, res) => {
 	} catch (error) {
 		res.status(500).json({ message: 'Error al actualizar líder' });
 	}
-};
+});
 
-export const deleteLider = async (req, res) => {
+export const deleteLider = catchError(async (req, res) => {
 	try {
 		const { id } = req.params;
 
@@ -78,4 +79,4 @@ export const deleteLider = async (req, res) => {
 	} catch (error) {
 		res.status(500).json({ message: 'Error al eliminar líder' });
 	}
-};
+});

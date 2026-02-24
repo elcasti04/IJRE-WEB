@@ -1,3 +1,5 @@
-export const sobreNosotros = (req, res) => {
+import catchError from "../middlewares/catchError.js";
+
+export const sobreNosotros = catchError((req, res) => {
     res.send('Sobre Nosotros - Iglesia Evangelica JesuCristo Rey Eterno');
-}
+})
