@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import app from './app.js'
 import sequelize from '../db/conect.js';
 
@@ -8,7 +9,7 @@ const startServer = async () => {
 		if (process.env.DATABASE_URL) {
 			console.log('conectando a la base de datos....');
 			await sequelize.authenticate();
-			await sequelize.sync({ force: true });
+			await sequelize.sync({ force: false });
 			await sequelize.sync({ alter: true });
 
 			console.log('base de datos conectada');

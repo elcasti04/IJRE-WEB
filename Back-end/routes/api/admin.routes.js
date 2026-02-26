@@ -12,19 +12,12 @@ import {
 	deleteLider,
 } from '../../controller/lideres.controller.js';
 import { uploadLider } from '../../middlewares/uploadLider.js';
+import { authMiddleware } from '../../middlewares/auth.middleware.js';
 
 const router = Router();
 
-// Middleware para verificar si está logueado
-const requireAuth = (req, res, next) => {
-	if (req.session && req.session.user) {
-		return next();
-	} else {
-		return res.status(401).json({ message: 'No autorizado' });
-	}
-};
-
-router.use(requireAuth);
+// Middleware para verificar JWT
+router.use(authMiddleware);
 
 // Rutas para administrar info
 router.get('/info', getInfo);
