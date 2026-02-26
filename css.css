@@ -1,0 +1,47 @@
+.contenedor {
+	display: flexbox;
+    box-sizing: border-box;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	width: 100%;
+	height: 100vh;
+	background-color: aqua;
+}
+header {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	background-color: blueviolet;
+	gap: 80vh;
+}
+.mini-header {
+	display: block;
+	background-color: brown;
+	height: 60px;
+}
+.info {
+	display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+}
+.info1 {
+	display: block;
+	background-color: brown;
+}
+.mision {
+    display: flexbox;
+    box-sizing: border-box;
+    width: 40%;
+    height: 15rem;
+    background-color: aquamarine;
+}
+.vision {
+    display: flexbox;
+    box-sizing: border-box;
+    width: 40%;
+    height: 15rem;
+    background-color: aquamarine;
+}
