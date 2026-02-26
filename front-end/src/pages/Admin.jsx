@@ -5,17 +5,25 @@
     * Listar y crear/eliminar `info` (textos informativos).
     * Listar, crear (con imagen) y eliminar `lideres`.
     * Soporta subida de imagenes vía `FormData`.
-    * Usa `api` (axios) con `withCredentials` para enviar cookies de sesión.
+    * Usa `api` (axios) con token JWT para autenticación.
 */
 
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-// Axios con cookies
+
 const api = axios.create({
 	baseURL: 'http://localhost:3000',
-	withCredentials: true,
+});
+
+
+api.interceptors.request.use((config) => {
+	const token = localStorage.getItem('token');
+	if (token) {
+		config.headers.Authorization = `Bearer ${token}`;
+	}
+	return config;
 });
 
 const Admin = () => {
@@ -109,13 +117,9 @@ const Admin = () => {
 	};
 
 	// ================= LOGOUT =================
-	const handleLogout = async () => {
-		try {
-			await api.post('/logout');
-			navigate('/login');
-		} catch (error) {
-			console.error(error);
-		}
+	const handleLogout = () => {
+		localStorage.removeItem('token');
+		navigate('/login');
 	};
 
 	return (

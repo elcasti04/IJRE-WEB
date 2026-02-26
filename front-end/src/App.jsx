@@ -18,6 +18,7 @@ import Contacto from './pages/Contacto';
 import Donaciones from './pages/Donaciones';
 import Login from './pages/Login';
 import Admin from './pages/Admin';
+import Creemos from './pages/cremos' 
 
 function App() {
 	return (
@@ -37,6 +38,7 @@ function App() {
 						<Route path="/donaciones" element={<Donaciones />} />
 						<Route path="/login" element={<Login />} />
 						<Route path="/admin" element={<Admin />} />
+						<Route path="/creemos" element={<Creemos />} />
 					</Routes>
 				</div>
 			</div>

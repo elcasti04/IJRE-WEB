@@ -42,6 +42,9 @@ const Navbar = () => {
 					<Link to="/donaciones">Donaciones</Link>
 				</li>
 				<li>
+					<Link to="/creemos">Lo que Creemos</Link>
+				</li>
+				<li>
 					<Link to="/login">Login</Link>
 				</li>
 			</ul>

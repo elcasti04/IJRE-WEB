@@ -11,8 +11,8 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-	const [nombre, setNombre] = useState('');
-	const [contraseña, setContraseña] = useState('');
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
 	const [message, setMessage] = useState('');
 	const navigate = useNavigate();
 
@@ -20,11 +20,13 @@ const Login = () => {
 		e.preventDefault();
 		try {
 			const response = await axios.post('http://localhost:3000/auth/login', {
-				nombre,
-				contraseña,
+				email,
+				password,
 			});
 			setMessage(response.data.message);
 			if (response.data.message === 'Login exitoso') {
+				// Guardar el token en localStorage
+				localStorage.setItem('token', response.data.token);
 				navigate('/admin');
 			}
 		} catch (error) {
@@ -61,25 +63,28 @@ const Login = () => {
 				</p>
 				<form onSubmit={handleSubmit}>
 					<div>
-						<img src="https://img.icons8.com/?size=100&id=98957&format=png&color=000000" alt="Icono de contraseña" style={{ width: '24px', height: '24px', marginRight: '1rem' }} />
-					<input
-						type="text"
-						placeholder="Usuario"
-						value={nombre}
-						onChange={(e) => setNombre(e.target.value)}
-						required
-						style={{ marginBottom: '1rem' }}
-					/>
-					
-					<input	
-						
-						type="password"
-						placeholder= "contraseña"
-						value={contraseña}
-						onChange={(e) => setContraseña(e.target.value)}
-						required
-						style={{ marginBottom: '1rem' }}
-					/>
+						<img
+							src="https://img.icons8.com/?size=100&id=98957&format=png&color=000000"
+							alt="Icono de password"
+							style={{ width: '24px', height: '24px', marginRight: '1rem' }}
+						/>
+						<input
+							type="text"
+							placeholder="Usuario"
+							value={email}
+							onChange={(e) => setEmail(e.target.value)}
+							required
+							style={{ marginBottom: '1rem' }}
+						/>
+
+						<input
+							type="password"
+							placeholder="password"
+							value={password}
+							onChange={(e) => setPassword(e.target.value)}
+							required
+							style={{ marginBottom: '1rem' }}
+						/>
 					</div>
 					<button type="submit" style={{ width: '100%' }}>
 						Acceder

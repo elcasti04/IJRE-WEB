@@ -7,10 +7,7 @@
 
 const Donaciones = () => {
 	return (
-		<div>
-			<h1>Donaciones</h1>
-			<p>Información sobre donaciones.</p>
-		</div>
+<h1>ERROR 404</h1>
 	);
 };
 
