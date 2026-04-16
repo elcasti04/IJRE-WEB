@@ -38,7 +38,13 @@ const Videos = () => {
 		);
 	if (error)
 		return (
-			<p style={{ textAlign: 'center', padding: '2rem', color: 'red' }}>
+			<p
+				style={{
+					textAlign: 'center',
+					padding: '2rem',
+					color: 'var(--accent-color)',
+				}}
+			>
 				Error: {error}
 			</p>
 		);

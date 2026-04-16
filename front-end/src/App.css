@@ -1,12 +1,14 @@
 /* Tema espiritual: Colores claros, paz, fe, esperanza */
 :root {
-	--primary-color: #4a90e2; /* Azul cielo */
-	--secondary-color: #7ed321; /* Verde esperanza */
-	--accent-color: #f5a623; /* Dorado fe */
-	--background-color: #f7f9fc; /* Blanco suave */
-	--text-color: #2c3e50; /* Gris oscuro */
-	--light-text: #bdc3c7; /* Gris claro */
-	--shadow: rgba(74, 144, 226, 0.1);
+	--primary-color: #1e4f8a; /* Azul institucional */
+	--secondary-color: #58913f; /* Verde esperanza */
+	--accent-color: #b93235; /* Rojo inspirado en el logo */
+	--background-color: #f5f8fc; /* Blanco suave con matiz azul */
+	--surface-color: #ffffff;
+	--text-color: #142740; /* Azul muy oscuro */
+	--light-text: #6a7d94; /* Gris azul suave */
+	--border-color: rgba(30, 79, 138, 0.18);
+	--shadow: rgba(30, 79, 138, 0.12);
 	--border-radius: 12px;
 	--font-family: 'Georgia', serif; /* Fuente elegante */
 }
@@ -31,16 +33,49 @@ body {
 	min-height: 100vh;
 }
 
-#mision {
-	margin-bottom: 20px;
-	flex-wrap: unset;
-	text-align: center;
-}
-
 .App {
 	height: 100vh;
 	display: flex;
+}
+.content {
+	flex: 1;
+	display: flex;
 	flex-direction: column;
+}
+.header {
+	height: 90px;
+	background: linear-gradient(
+		90deg,
+		var(--primary-color),
+		var(--secondary-color)
+	);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 25px;
+	box-sizing: border-box;
+	color: white;
+}
+.page {
+	flex: 1;
+	padding: 20px;
+	overflow-y: auto;
+}
+.contenedor-credos {
+	padding: 16px;
+	width: 330px;
+	height: 380px;
+	background-color: var(--surface-color);
+	border: 1px solid var(--border-color);
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	text-align: center;
+
+	box-sizing: border-box;
+	border-radius: 12px;
 }
 
 h1,
@@ -111,20 +146,6 @@ ul {
 	padding: 0;
 }
 
-li {
-	background: white;
-	margin: 1rem 0;
-	padding: 1.5rem;
-	border-radius: var(--border-radius);
-	box-shadow: 0 4px 15px var(--shadow);
-	transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-li:hover {
-	transform: translateY(-5px);
-	box-shadow: 0 8px 25px var(--shadow);
-}
-
 a {
 	color: var(--primary-color);
 	text-decoration: none;
@@ -161,7 +182,7 @@ a:hover {
 	}
 }
 /* ===== Input FILE (subir imagen) ===== */
-input[type="file"] {
+input[type='file'] {
 	padding: 0.6rem;
 	background-color: white;
 	border: 2px dashed var(--primary-color);
@@ -172,7 +193,7 @@ input[type="file"] {
 }
 
 /* Botón interno del input file (Chrome, Edge) */
-input[type="file"]::file-selector-button {
+input[type='file']::file-selector-button {
 	background: linear-gradient(
 		45deg,
 		var(--primary-color),
@@ -188,7 +209,7 @@ input[type="file"]::file-selector-button {
 	transition: all 0.3s ease;
 }
 
-input[type="file"]::file-selector-button:hover {
+input[type='file']::file-selector-button:hover {
 	background: linear-gradient(
 		45deg,
 		var(--secondary-color),
@@ -196,5 +217,3 @@ input[type="file"]::file-selector-button:hover {
 	);
 	transform: translateY(-2px);
 }
-
-

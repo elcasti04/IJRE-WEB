@@ -1,34 +1,19 @@
-/*
-  Info.jsx
-  - Muestra una lista de entradas informativas traídas desde el backend.
-  - Comportamiento:
-	* Al montar, realiza GET a `http://localhost:3000/info`.
-	* Maneja estados: `loading`, `error` e `infos`.
-	* Renderiza mensajes de carga/errores y la lista cuando está disponible.
-  - Nota: el formato esperado del backend es un array de objetos con
-	{ id, title, info }.
-*/
-
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
 const Info = () => {
-	// Estado para los items de información
 	const [infos, setInfos] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
 
 	useEffect(() => {
-		// Petición al endpoint `/info` del backend
 		axios
 			.get('http://localhost:3000/info')
 			.then((response) => {
-				// Se asume que `response.data` es un array
 				setInfos(response.data);
 				setLoading(false);
 			})
 			.catch((error) => {
-				// Guardar mensaje de error para mostrar al usuario
 				setError(error.message);
 				setLoading(false);
 			});
@@ -36,35 +21,42 @@ const Info = () => {
 
 	if (loading)
 		return (
-			<p style={{ textAlign: 'center', padding: '2rem' }}>
-				Cargando información espiritual...
-			</p>
+			<div style={{ textAlign: 'center', padding: '2rem' }}>
+				<img src="../../public/iconos/icons8-load.gif" alt="" />
+			</div>
 		);
 	if (error)
 		return (
-			<p style={{ textAlign: 'center', padding: '2rem', color: 'red' }}>
+			<p
+				style={{
+					textAlign: 'center',
+					padding: '2rem',
+					color: 'var(--accent-color)',
+				}}
+			>
 				Error: {error}
 			</p>
 		);
 
 	return (
 		<div className="fade-in" style={{ padding: '2rem' }}>
-			<h1>Información Espiritual</h1>
+			<h1>Informes Iglesia Evangelica Jesucristo Rey Eterno</h1>
 			<p
 				style={{
 					textAlign: 'center',
 					marginBottom: '2rem',
 					fontStyle: 'italic',
+					fontSize: '30px',
 				}}
 			>
-				Descubre enseñanzas y reflexiones que fortalecen tu fe
+				Informes
 			</p>
 
 			{/* Si no hay items, mostrar mensaje amigable */}
 			{infos.length === 0 ? (
-				<p style={{ textAlign: 'center', fontSize: '1.2rem' }}>
+				<strong style={{ textAlign: 'center', fontSize: '1.2rem' }}>
 					No hay información disponible en este momento.
-				</p>
+				</strong>
 			) : (
 				<ul>
 					{infos.map((info) => (

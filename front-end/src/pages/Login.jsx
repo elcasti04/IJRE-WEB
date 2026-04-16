@@ -95,7 +95,9 @@ const Login = () => {
 						style={{
 							marginTop: '1rem',
 							color:
-								message === 'Login exitoso' ? 'var(--secondary-color)' : 'red',
+								message === 'Login exitoso'
+									? 'var(--secondary-color)'
+									: 'var(--accent-color)',
 							fontWeight: 'bold',
 						}}
 					>

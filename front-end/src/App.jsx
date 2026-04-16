@@ -12,34 +12,45 @@ import Navbar from './components/Navbar';
 import Inicio from './pages/Inicio';
 import Info from './pages/Info';
 import Videos from './pages/Videos';
-import Lideres from './pages/Lideres';
 import Nosotros from './pages/Nosotros';
+import Lideres from './pages/Lideres';
 import Contacto from './pages/Contacto';
 import Donaciones from './pages/Donaciones';
 import Login from './pages/Login';
 import Admin from './pages/Admin';
-import Creemos from './pages/cremos' 
+import Creemos from './pages/cremos';
+import Header from './components/header';
+import Iglesias from './pages/Iglesias';
+import Galeria from './pages/Galeria';
+import Ministerios from './pages/ministerios'
+import Academia from './pages/Academia'
 
 function App() {
 	return (
 		<Router>
 			<div className="App">
 				<Navbar />
-				<div style={{ flex: 1, overflowY: 'auto' }}>
-					<Routes>
-						{/* Rutas principales de la aplicación. Cada ruta renderiza
-						   un componente de la carpeta `src/pages`. */}
+
+				<div className="content">
+					<Header />
+					<div className="page">
+										<Routes>
 						<Route path="/" element={<Inicio />} />
 						<Route path="/info" element={<Info />} />
 						<Route path="/videos" element={<Videos />} />
-						<Route path="/lideres" element={<Lideres />} />
 						<Route path="/nosotros" element={<Nosotros />} />
+						<Route path="/lideres" element={<Lideres />} />
 						<Route path="/contacto" element={<Contacto />} />
 						<Route path="/donaciones" element={<Donaciones />} />
 						<Route path="/login" element={<Login />} />
 						<Route path="/admin" element={<Admin />} />
 						<Route path="/creemos" element={<Creemos />} />
+						<Route path='/Iglesias-Asociadas' element={<Iglesias />} />
+						<Route path='/Galeria' element={<Galeria/>}/>
+						<Route path='/Ministerios' element={<Ministerios/>}></Route>
+						<Route path='/Academia' element={<Academia/>}></Route>
 					</Routes>
+					</div>
 				</div>
 			</div>
 		</Router>
