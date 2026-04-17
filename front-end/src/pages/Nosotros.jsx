@@ -10,7 +10,7 @@ const Nosotros = () => {
 						marginBottom:'10px'
 					}}
 				>
-					<h2 style={{ color: 'white', fontSize: '40px' }}>Sobre Nosotros</h2>
+					<h2 style={{ color: 'white', fontSize: '30px' }}>Sobre Nosotros</h2>
 				</div>
 				<div
 					style={{
@@ -32,7 +32,7 @@ const Nosotros = () => {
 				className="mision-vision"
 				style={{ display: 'flex', justifyContent: 'center', gap: '230px' }}
 			>
-				<div className="mision" style={{ padding: '8px', width: '300px' }}>
+				<div className="mision" style={{textAlign:'center', padding: '5px', width: '300px', backgroundColor:'rgb(195, 195, 219)', borderRadius:'20px' }}>
 					<h2>Mision</h2>
 					<p>
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit,
@@ -41,7 +41,7 @@ const Nosotros = () => {
 						rerum iure?
 					</p>
 				</div>
-				<div className="vision" style={{ padding: '8px', width: '300px' }}>
+				<div className="vision" style={{textAlign:'center', padding: '5px', width: '300px', backgroundColor:'rgb(195, 195, 219)', borderRadius:'20px' }}>
 					<h2>Vision</h2>
 					<p>
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit,
@@ -53,32 +53,32 @@ const Nosotros = () => {
 			</div>
 			<footer
 				style={{
-					padding: '120px 100px 0px 0px',
+					padding: '10px 40px',
 					display: 'flex',
 					flexDirection: 'row',
+					fontSize:'10px'
 				}}
 			>
+				
 				<ul style={{ display: 'flex', gap: '30rem', listStyle: 'none' }}>
 					<li>
-						<h2>
-							<img
+						<h3>
+							<img style={{width:'20px'}}
 								src="../../iconos/icons8-location.gif"
 								alt="icono de ubicacion"
 							/>{' '}
 							San Pedro Sucre (Colombia)
-						</h2>
+						</h3>
 					</li>
 
 					<li>
-						<h2>
-							<img
+						<h3>
+							<img style={{width:'20px'}}
 								src="../../iconos/icons8-calendar.gif"
 								alt="icono de calendario"
 							/>{' '}
 							Servicios
-						</h2>
-
-						<h3></h3>
+						</h3>
 						<ul>
 							<li>Domingos 9 A.M</li>
 							<li>Miercoles 7 P.M</li>

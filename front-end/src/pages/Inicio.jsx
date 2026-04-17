@@ -12,15 +12,15 @@ const Inicio = () => {
 			>
 				{/* Si el backend no da datos, se muestra un título por defecto */}
 				<h1>Bienvenidos</h1>
-				<h1 style={{ fontSize: '70px' }}>
+				<h1 className="inicio-titulo" style={{fontSize:'40px'}}>
 					Iglesia Evangelica Jesucristo Rey Eterno
 				</h1>
 				<h3>IEJRE - IREP</h3>
 
 				{/* cita Biblica */}
-				<div style={{ width: '100%', marginTop: '2rem' }}>
+				<div style={{ width: '100%', marginTop: '1.5rem' }}>
 					<h2>Romanos 11:36</h2>
-					<p style={{ fontSize: '1.6rem', lineHeight: '1' }}>
+					<p style={{ fontSize: '1rem', lineHeight: '1' }}>
 						<i>
 							Porque de él, y por él, y para él, son todas las cosas. A él sea
 							la gloria por los siglos. Amén.
@@ -32,7 +32,7 @@ const Inicio = () => {
 							display: 'flex',
 							justifyContent: 'center',
 							gap: '1rem',
-							marginTop: '2rem',
+							marginTop: '1rem',
 						}}
 					>
 						{/* Redirecciones simples cambiando location (podría usarse useNavigate) */}

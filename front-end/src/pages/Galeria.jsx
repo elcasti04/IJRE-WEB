@@ -120,7 +120,7 @@ const Galeria = () => {
 			<div className="contenedor">
 				<div
 					className="titulo"
-					style={{ backgroundColor: 'var(--primary-color)' }}
+					style={{width:'100%', backgroundColor: 'var(--primary-color)' }}
 				>
 					<h1>Galeria</h1>
 				</div>

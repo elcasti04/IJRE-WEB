@@ -1,13 +1,3 @@
-/*
-  Lideres.jsx
-  - Página que muestra los líderes espirituales.
-  - Comportamiento:
-  * Realiza GET a `/lideres` en el backend al montar.
-  * Maneja estados: `loading`, `error` y `lideres`.
-  * Si la propiedad `image` empieza con `/` se interpreta como ruta
-  * pública del backend y se antepone `http://localhost:3000`.
-*/
-
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
@@ -36,9 +26,7 @@ const Lideres = () => {
 
 	if (loading)
 		return (
-			<p style={{ textAlign: 'center', padding: '2rem' }}>
-				Cargando líderes espirituales...
-			</p>
+			<img style={{display:'flex', textAlign: 'center', padding: '2rem' }} src="../../public/iconos/icons8-load.gif" alt="icono de carga" />
 		);
 	if (error)
 		return (

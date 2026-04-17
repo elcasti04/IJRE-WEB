@@ -9,19 +9,9 @@ const Creemos = () => {
 					background: 'linear-gradient(135deg, #1E4F8A 0%, #58913F 100%)',
 				}}
 			>
-				<h1>Lo que creemos</h1>
+				<h1 style={{color:'white'}}>Lo que creemos</h1>
 			</div>
-			<div
-				className="contenedor"
-				style={{
-					display: 'flex',
-					flexDirection: 'row',
-					alignItems: 'center',
-					justifyContent: 'center',
-					gap: '75px',
-					padding: '30px',
-				}}
-			>
+			<div className="contenedor">
 				<div className="contenedor-credos">
 					<div className="5-solas">
 						<h2>5 Solas de la reforma</h2>

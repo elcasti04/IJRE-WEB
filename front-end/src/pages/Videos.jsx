@@ -1,14 +1,3 @@
-/*
-  Videos.jsx
-  - Lista de videos obtenidos desde el backend (que a su vez consume la API de YouTube).
-  - Flujo:
-	* Al montar, GET a `http://localhost:3000/videos`.
-	* Muestra estados de carga y error.
-	* Cada video muestra miniatura, título, fecha y enlace a YouTube.
-  - Se espera que `response.data` sea un array con campos:
-	{ title, videoId, link, published, thumbnail }
-*/
-
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
