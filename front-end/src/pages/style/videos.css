@@ -1,0 +1,61 @@
+.predicas {
+    width: 100%;
+    font-family: "DM Serif Display", serif;
+    font-size: 1.1em;
+    padding-top: 100px;
+    width: 100%;
+    color: black;
+    min-height: 100vh;
+}
+
+.predicas h1 {  
+    color:#01069b;
+    font-size: 4em;
+}
+
+.predicas p {
+    font-family: "Gruppo", sans-serif;
+    font-size: 2.2em;
+    width: 80%;
+    text-align: justify;
+}
+
+@media (max-width: 768px) {
+    .predicas {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .predicas iframe {
+        max-width: 300px;
+    }
+
+    .predicas h1 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .predicas p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+        .predicas {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .predicas iframe {
+        max-width: 300px;
+    }
+
+    .predicas h1 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .predicas p {
+        font-size: 1rem;
+    }
+}

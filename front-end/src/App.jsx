@@ -1,20 +1,8 @@
-/*
-	App.jsx
-	- Punto de entrada de rutas del frontend.
-	- Define el enrutamiento con `react-router-dom` y monta la `Navbar`.
-	- Cada `Route` carga una página (componentes en `src/pages`).
-	- No maneja estado global; sirve como contenedor de rutas.
-*/
 
 import { useState, useEffect } from 'react';
-import {
-	BrowserRouter as Router,
-	Routes,
-	Route,
-	useLocation,
-} from 'react-router-dom';
 import './App.css';
-import Navbar from './components/Navbar';
+import { Routes, Route } from 'react-router-dom';
+
 import Inicio from './pages/Inicio';
 import Info from './pages/Info';
 import Videos from './pages/Videos';
@@ -30,95 +18,67 @@ import Iglesias from './pages/Iglesias';
 import Galeria from './pages/Galeria';
 import Ministerios from './pages/ministerios';
 import Academia from './pages/Academia';
+import Footer from './pages/footer';
 
-const MobileScrollPages = () => {
+function Home() {
 	return (
-		<div className="mobile-sections">
-			<section className="mobile-section">
-				<Inicio />
-			</section>
-			<section className="mobile-section">
-				<Nosotros />
-			</section>
-			<section className="mobile-section">
-				<Creemos />
-			</section>
-			<section className="mobile-section">
-				<Info />
-			</section>
-			<section className="mobile-section">
-				<Lideres />
-			</section>
-			<section className="mobile-section">
-				<Ministerios />
-			</section>
-			<section className="mobile-section">
-				<Academia />
-			</section>
-			<section className="mobile-section">
-				<Iglesias />
-			</section>
-			<section className="mobile-section">
-				<Contacto />
-			</section>
-			<section className="mobile-section">
-				<Donaciones />
-			</section>
-		</div>
-	);
-};
-
-function AppContent() {
-	const [isMobile, setIsMobile] = useState(false);
-	const location = useLocation();
-
-	useEffect(() => {
-		const handleResize = () => setIsMobile(window.innerWidth <= 768);
-		handleResize();
-		window.addEventListener('resize', handleResize);
-		return () => window.removeEventListener('resize', handleResize);
-	}, []);
-
-	const isMobileHome = isMobile && location.pathname === '/';
-
-	return (
-		<div className="App">
-			<Navbar />
-
-			<div className="content">
-				<Header />
-				<div className="page">
-					{isMobileHome ? (
-						<MobileScrollPages />
-					) : (
-						<Routes>
-							<Route path="/" element={<Inicio />} />
-							<Route path="/info" element={<Info />} />
-							<Route path="/videos" element={<Videos />} />
-							<Route path="/nosotros" element={<Nosotros />} />
-							<Route path="/lideres" element={<Lideres />} />
-							<Route path="/contacto" element={<Contacto />} />
-							<Route path="/donaciones" element={<Donaciones />} />
-							<Route path="/login" element={<Login />} />
-							<Route path="/admin" element={<Admin />} />
-							<Route path="/creemos" element={<Creemos />} />
-							<Route path="/Iglesias-Asociadas" element={<Iglesias />} />
-							<Route path="/Galeria" element={<Galeria />} />
-							<Route path="/Ministerios" element={<Ministerios />} />
-							<Route path="/Academia" element={<Academia />} />
-						</Routes>
-					)}
-				</div>
-			</div>
-		</div>
+		<>
+		<Header />
+		<section id='Inicio'>
+			<Inicio />
+		</section>
+		<section id='Nosotros'>
+			<Nosotros />
+		</section>
+		<section id='Creemos'>
+			<Creemos />
+		</section>
+		<section id='Galeria'>
+			<Galeria />
+		</section>
+		<section id='Videos'>
+			<Videos />
+		</section>
+		<section id='Lideres'>
+			<Lideres />
+		</section>
+		<section id='Ministerios'>
+			<Ministerios />
+		</section>
+		<section id='Academia'>
+			<Academia />
+		</section>
+		<section id='Iglesias'>
+			<Iglesias />
+		</section>
+		<section id='Contacto'>
+			<Contacto />
+		</section>
+		<section id='Footer'>
+			<Footer />
+		</section>
+		</>
 	);
 }
 
 function App() {
 	return (
-		<Router>
-			<AppContent />
-		</Router>
+		<Routes>
+			<Route path="/login" element={<Login />} />
+			<Route path="/*" element={<Home />} />
+			<Route path="/Nosotros" element={<Nosotros />} />
+			<Route path="/Creemos" element={<Creemos />} />
+			<Route path="/Galeria" element={<Galeria />} />
+			<Route path="/Videos" element={<Videos />} />
+			<Route path="/Lideres" element={<Lideres />} />
+			<Route path="/Ministerios" element={<Ministerios />} />
+			<Route path="/Academia" element={<Academia />} />
+			<Route path="/Iglesias" element={<Iglesias />} />
+			<Route path="/Contacto" element={<Contacto />} />
+			<Route path="/Admin" element={<Admin />} />
+			
+			
+		</Routes>
 	);
 }
 

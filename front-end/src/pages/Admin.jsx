@@ -1,13 +1,4 @@
-/*
-  Admin.jsx
-  - Panel de administración accesible solo si el backend devuelve sesión válida.
-  - Funcionalidades principales:
-    * Listar y crear/eliminar `info` (textos informativos).
-    * Listar, crear (con imagen) y eliminar `lideres`.
-    * Soporta subida de imagenes vía `FormData`.
-    * Usa `api` (axios) con token JWT para autenticación.
-*/
-
+import './style/admin.css'
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -28,6 +19,8 @@ api.interceptors.request.use((config) => {
 
 const Admin = () => {
 	const [infos, setInfos] = useState([]);
+	const [galeria, setGaleria] = useState([])
+	const [imagen, setImagen] = useState({ ministerio: '', info: '', image: '' })
 	const [lideres, setLideres] = useState([]);
 	const [newInfo, setNewInfo] = useState({ title: '', info: '' });
 
@@ -51,6 +44,9 @@ const Admin = () => {
 
 			const liderRes = await api.get('/admin/lideres');
 			setLideres(liderRes.data.liders || []);
+
+			const galeryRes = await api.get('/admin/galeria');
+			setGaleria(galeryRes.data)
 		} catch (error) {
 			console.error(error);
 			if (error.response?.status === 401) {
@@ -59,10 +55,37 @@ const Admin = () => {
 		}
 	};
 
+
+	// ================== GALERIA ==================
+
+	const handleAddFoto = async () => {
+		try {
+			const formData = new FormData();
+			formData.append('ministerio', imagen.ministerio);
+			formData.append('info', imagen.info);
+			formData.append('image', imagen.image);
+
+			await api.post('/admin/galeria', formData);
+			setImagen({ ministerio: '', info: '', image: '' });
+			fetchData();
+		} catch (error) {
+			console.error(error);
+		}
+	}
+
+	const handleDeleteFoto = async (id) => {
+		try {
+				await api.delete(`/admin/galeria/${id}`)
+			fetchData()
+		} catch (error) {
+			console.error(error)
+		}
+	}
+
 	// ================= INFO =================
 	const handleAddInfo = async () => {
 		try {
-			await api.post('/admin/info', newInfo);
+			await api.post('admin/info', newInfo);
 			setNewInfo({ title: '', info: '' });
 			fetchData();
 		} catch (error) {
@@ -78,6 +101,9 @@ const Admin = () => {
 			console.error(error);
 		}
 	};
+
+
+
 
 	// ================= LÍDERES =================
 	const handleAddLider = async () => {
@@ -116,6 +142,8 @@ const Admin = () => {
 		}
 	};
 
+	
+
 	// ================= LOGOUT =================
 	const handleLogout = () => {
 		localStorage.removeItem('token');
@@ -123,9 +151,16 @@ const Admin = () => {
 	};
 
 	return (
-		<div style={{ padding: '2rem' }}>
-			<h1>Panel de Administración</h1>
+		<div className='admin'>
+			
 
+			<div className='heade d-flex justify-content-around'>
+				<h1>Panel de Administración</h1>
+				<button onClick={handleLogout}>Cerrar sesión</button>
+			</div>
+
+			<div className='INFORMACION'>
+							
 			{/* ===== INFO ===== */}
 			<h2>Información</h2>
 			<ul>
@@ -148,30 +183,16 @@ const Admin = () => {
 				onChange={(e) => setNewInfo({ ...newInfo, info: e.target.value })}
 			/>
 			<button onClick={handleAddInfo}>Agregar Info</button>
+			</div>
 
 			<hr />
 
-			{/* ===== LÍDERES ===== */}
-			<h2>Líderes</h2>
-			<ul>
-				{lideres.map((lider) => (
-					<li key={lider.id}>
-						<strong>{lider.nombre}</strong> - {lider.cargo}
-						<br />
-						{lider.image && (
-							<img
-								src={`http://localhost:3000${lider.image}`}
-								alt={lider.nombre}
-								width="100"
-							/>
-						)}
-						<br />
-						<button onClick={() => handleDeleteLider(lider.id)}>
-							Eliminar
-						</button>
-					</li>
-				))}
-			</ul>
+
+			<div className='LIDERES col d-flex'>
+				{/* Lider */}
+
+			<div className='Añadir-Lider col-5'>
+					<h2>Añadir Lider</h2>
 
 			<input
 				placeholder="Nombre"
@@ -196,10 +217,89 @@ const Admin = () => {
 			/>
 
 			<button onClick={handleAddLider}>Agregar Líder</button>
+			</div>
+
+			
+
+			<div className='ver-lideres col-5'>
+							{/* ===== LÍDERES ===== */}
+			<h2>Líderes</h2>
+			<ul>
+				{lideres.map((lider) => (
+					<li key={lider.id}>
+						<strong>{lider.nombre}</strong> - {lider.cargo}
+						<br />
+						{lider.image && (
+							<img
+								src={`http://localhost:3000${lider.image}`}
+								alt={lider.nombre}
+								width="100"
+							/>
+						)}
+						<br />
+						<button onClick={() => handleDeleteLider(lider.id)}>
+							Eliminar
+						</button>
+					</li>
+				))}
+			</ul>
+			</div>
 
 			<hr />
 
-			<button onClick={handleLogout}>Cerrar sesión</button>
+			
+			</div>
+
+
+			<hr />
+
+			
+			<div className='GALERIA'>
+				<h2>Añadir foto a Galeria</h2>
+				<select name="minis" id="minis"
+					value={imagen.ministerio}
+					onChange={(e) => setImagen({ ...imagen, ministerio: e.target.value})}>
+					<option value={null}>Seleccione un ministerio</option>
+					<option value="Damas">Damas</option>
+					<option value="Caballeros">Caballeros</option>
+					<option value="Jovenes">Jovenes</option>
+					<option value="Niños">Niños</option>
+					
+				</select>	
+
+				<input type="text" 
+					placeholder='informacion relevante'
+					value={imagen.info}
+					onChange={(e) => setImagen({ ...imagen, info: e.target.value})}/>
+
+				<input
+				type="file"
+				accept="image/*"
+				onChange={(e) => setImagen({ ...imagen, image: e.target.files[0] })}
+			/>
+
+
+				<button onClick={handleAddFoto}>Agregar Imagen</button>
+
+			<h2>Fotos</h2>
+			{galeria.map((fotos) => (
+				<ul key={fotos.id}>
+					<li>
+						<h5>{fotos.ministerio}</h5>
+						<img src={fotos.image} alt="" />
+						<p>{fotos.info}</p>
+						<button onClick={() => handleDeleteFoto(fotos.id)}>Eliminar</button>
+					</li>
+				</ul>
+			))}
+			</div>
+
+<br />
+<hr />
+<br />
+
+			
+
 		</div>
 	);
 };

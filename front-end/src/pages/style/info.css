@@ -1,0 +1,35 @@
+.info {
+    font-family: Georgia;
+    text-align: center;
+    padding-top: 50px;
+    width: 100%;
+    height: 100vh;
+    color: black;
+}
+.info h1 {
+    color:rgb(0, 0, 0);
+   font-size: 3em;
+    padding: 20px;
+}
+.info p {
+   color:rgb(0, 0, 0);
+    font-size: 2.4em;
+    border-radius: 12px;
+}
+
+.info-tarjeta {
+	box-sizing: border-box;
+    background-color: rgba(22, 47, 171, 0.1);
+	text-align: center;
+    cursor: pointer;
+    list-style: none;
+}
+
+.info-tarjeta h3 {
+   font-size: 2em;
+    color: rgb(0, 0, 0);
+}
+
+.info-tarjeta p {
+    font-size: 20px;
+}

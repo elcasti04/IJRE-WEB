@@ -1,67 +1,70 @@
+import './style/inicio.css'
+
 const Inicio = () => {
 	return (
 		<>
 			<div
-				className="fade-in"
-				style={{
-					padding: '2rem',
-					textAlign: 'center',
-					background:
-						'linear-gradient(135deg, rgba(245,248,252,0.94) 0%, rgba(229,239,250,0.94) 100%)',
-				}}
+				className="Inicio text-center col d-flex flex-column justify-content-center gap-3"
 			>
-				{/* Si el backend no da datos, se muestra un título por defecto */}
-				<h1>Bienvenidos</h1>
-				<h1 className="inicio-titulo" style={{fontSize:'40px'}}>
-					Iglesia Evangelica Jesucristo Rey Eterno
+				
+				<h4><i>Bienvenidos</i></h4>
+				<h1 className="inicio-titulo">
+					Iglesia Evangelica <br /> Jesucristo Rey Eterno
 				</h1>
-				<h3>IEJRE - IREP</h3>
+				<h3 className='siglas'>IEJRE - IREP</h3>
 
-				{/* cita Biblica */}
-				<div style={{ width: '100%', marginTop: '1.5rem' }}>
-					<h2>Romanos 11:36</h2>
-					<p style={{ fontSize: '1rem', lineHeight: '1' }}>
+				<br />
+				<div className='cita'>
+					<h4 className=' '>Romanos 11:36</h4>
+					<hr />
+					<p>
 						<i>
-							Porque de él, y por él, y para él, son todas las cosas. A él sea
-							la gloria por los siglos. Amén.
+							Porque de él, y por él, y para él, son todas las cosas. 
+							<br />
+							A él sea la gloria por los siglos. Amén.
 						</i>
 					</p>
 					<h3>Soli Deo Gloria</h3>
-					<div
-						style={{
-							display: 'flex',
-							justifyContent: 'center',
-							gap: '1rem',
-							marginTop: '1rem',
-						}}
-					>
-						{/* Redirecciones simples cambiando location (podría usarse useNavigate) */}
-						<button onClick={() => (window.location.href = '/info')}>
-							Información
-						</button>
-						<button onClick={() => (window.location.href = '/nosotros')}>
+					<br />
+					<div className='botones'>
+						
+						
+						<button className='bg-white text-primary' onClick={() => (window.location.href = '#Nosotros')}>
 							Conócenos
 						</button>
-						<button onClick={() => (window.location.href = '/contacto')}>
+						<button className='bg-primary' onClick={() => (window.location.href = '#Contacto')}>
 							Contáctanos
 						</button>
 					</div>
-				</div>
-
-				{/* Cita bíblica destacada */}
-				<div
-					style={{
-						marginTop: '3rem',
-						padding: '2rem',
-						background:
-							'linear-gradient(135deg, rgba(245,248,252,0.95) 0%, rgba(217,235,245,0.95) 100%)',
-						borderRadius: 'var(--border-radius)',
-						boxShadow: '0 8px 25px var(--shadow)',
-					}}
-				>
-					<h2>Reformados Por La Palabra de Dios</h2>
-				</div>
+				</div>				
 			</div>
+			<div className='servicios col'>
+					<ul className='d-flex text-center col-12'>
+						<li className='col-4 col-md-5'>
+							<p>Domingos <br />
+								<strong>9:00 A.M </strong>
+								<span>Culto de Adoracion</span>
+							</p>
+							
+							
+						</li>
+						<li className='col-4 col-md-2'
+						style={{borderLeft: '2px solid black', borderRight: '2px solid black'}}>
+							<p>Miercoles <br />
+								<strong>7:00 P.M </strong>
+								<span>Estudio Biblico</span>
+							</p>
+						</li>
+						
+						<li className='col-4 col-md-5'>
+							<p>Sabados <br />
+								<strong>6:00 P.M </strong>
+								<span>Grupo Juvenil</span>
+							</p>
+							
+						</li>
+					</ul>
+				</div>
 		</>
 	);
 };

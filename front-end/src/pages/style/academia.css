@@ -1,0 +1,144 @@
+.academia {
+    color: black;
+    font-family: "DM Serif Display", serif;
+    transition: transform 1s ease, opacity 1.5s ease;
+    padding-top: 100px;
+    width: 100%;
+}
+
+.academia h1 {
+    color:#01069b;
+    font-size: 4em;
+}
+
+.contenedor {
+    padding: 25px;
+    background: #f5f7fa;
+}
+
+/* Tarjeta base */
+.card-seminario {
+    background: white;
+    border-radius: 18px;
+    padding: 25px;
+}
+
+.card-seminario h3 {
+    color:rgb(0, 0, 0);
+    font-size: 2em;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #14203a;
+    padding-bottom: 10px;
+}
+
+/* Rector */
+.rector {
+    text-align: center;
+}
+
+.rector img {
+    width: 240px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 6px solid #14203a;
+    margin-bottom: 20px;
+}
+
+.rector h5 {
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+/* Logo */
+.logo-seminario img {
+    width: 100%;
+    height: 350px;
+    object-fit: contain;
+    border-radius: 12px;
+    background: #f8f9fa;
+    padding: 15px;
+}
+
+/* Descripción */
+.academia p {
+    font-family: "Gruppo", sans-serif;
+    font-size: 1.8em;
+    width: 80%;
+}
+
+/* Estudiantes */
+.galeria-estudiantes {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.galeria-estudiantes img {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 16px;
+    transition: .3s;
+}
+
+.galeria-estudiantes img:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+    .rector img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .logo-seminario img {
+        height: 220px;
+    }
+
+    .galeria-estudiantes img {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .rector img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .logo-seminario img {
+        height: 180px;
+    }
+
+    .galeria-estudiantes {
+        gap: 12px;
+    }
+
+    .galeria-estudiantes img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .academia h1 {
+        font-size: 2.2rem;
+    }
+
+    .descripcion p {
+        font-size: 0.95rem;
+    }
+
+    .contenedor {
+        padding: 15px 12px;
+    }
+
+    .card-seminario {
+        padding: 18px;
+    }
+}
+

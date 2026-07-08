@@ -1,258 +1,124 @@
 import { useState } from 'react';
+import './style/creemos.css'
+
 const Creemos = () => {
 	const [ver, setVer] = useState(false);
 	const [credo, setCredo] = useState(false);
 	return (
 		<>
-			<div
-				style={{
-					background: 'linear-gradient(135deg, #1E4F8A 0%, #58913F 100%)',
-				}}
-			>
-				<h1 style={{color:'white'}}>Lo que creemos</h1>
-			</div>
-			<div className="contenedor">
-				<div className="contenedor-credos">
-					<div className="5-solas">
+		
+			<main className="creemos container-fluid">
+			
+				<h4><strong><strong className='inicial'>L</strong>o que creemos</strong></h4>
+				<h1 className=''>Anclados en la fe histórica</h1>
+				<p>
+					<i>Nuestra doctrina se basa en las grandes confesiones de la Reforma y en la enseñanza bíblica a través de los siglos.</i>
+				</p>
+			<div className="contenedor col p-5 gap-3">
+				<div className="contenedor-credos col-12 col-md-3 col-lg-3 p-2">
+					
 						<h2>5 Solas de la reforma</h2>
+						<hr />
 						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit,
-							quasi hic cumque porro inventore illo labore velit fugit deserunt
-							fugiat amet culpa exercitationem modi ab animi consequatur commodi
-							rerum iure?
+							Sola Scriptura, Sola Fide, Sola Gratia, Solus Christus, Soli Deo Gloria. Estos cinco principios resumen el corazón de la fe evangélica reformada.
 						</p>
-						<button style={{ cursor: 'pointer' }} onClick={() => setVer(true)}>
+						<button className='leer-credo text-white' onClick={() => setVer(true)}>
 							Ver
 						</button>
-					</div>
+					
 					{ver && (
-						<div
-							onClick={() => setVer(false)}
-							style={{
-								position: 'fixed',
-								width: '100%',
-								height: '100%',
-								backgroundColor: 'rgba(16, 28, 54, 0.92)',
-								top: 0,
-								left: 0,
-								display: 'flex',
-								justifyContent: 'center',
-								alignItems: 'center',
-								gap: '30px',
-							}}
-						>
-							<div
-								style={{
-									border: '3px solid var(--primary-color)',
-									width: '250px',
-									height: '250px',
-									boxSizing: 'border-box',
-									display: 'flex',
-									justifyContent: 'center',
-									alignItems: 'center',
-									flexDirection: 'column',
-									borderRadius: '20px',
-									backgroundColor: '#5d88c0',
-									textAlign: 'center',
-								}}
-							>
+						<div className='fondo container-fluid' onClick={() => setVer(false)}>
+							<div className='tarjeta'>
 								<h2>Solo Escritura</h2>
-								<p style={{ fontSize: '18px', color: '#F7F7FB' }}>
+								<p>
 									La Biblia es la única autoridad suprema para el creyente.
 								</p>
 							</div>
-							<div
-								style={{
-									border: '3px solid var(--primary-color)',
-									width: '250px',
-									height: '250px',
-									boxSizing: 'border-box',
-									display: 'flex',
-									justifyContent: 'center',
-									alignItems: 'center',
-									flexDirection: 'column',
-									borderRadius: '20px',
-									backgroundColor: '#5d88c0',
-									textAlign: 'center',
-								}}
-							>
+							<div className='tarjeta'>
 								<h2>Solo Fé</h2>
-								<p style={{ fontSize: '18px', color: '#F7F7FB' }}>
+								<p>
 									La salvación se recibe solo por la fe, sin obras.
 								</p>
 							</div>
-							<div
-								style={{
-									border: '3px solid var(--primary-color)',
-									width: '250px',
-									height: '250px',
-									boxSizing: 'border-box',
-									display: 'flex',
-									justifyContent: 'center',
-									alignItems: 'center',
-									flexDirection: 'column',
-									borderRadius: '20px',
-									backgroundColor: '#5d88c0',
-									textAlign: 'center',
-								}}
-							>
+							<div className='tarjeta'>
 								<h2>Solo Gracia</h2>
-								<p style={{ fontSize: '18px', color: '#F7F7FB' }}>
+								<p>
 									La salvación es un regalo gratuito y no merecido de Dios.
 								</p>
 							</div>
-							<div
-								style={{
-									border: '3px solid var(--primary-color)',
-									width: '250px',
-									height: '250px',
-									boxSizing: 'border-box',
-									display: 'flex',
-									justifyContent: 'center',
-									alignItems: 'center',
-									flexDirection: 'column',
-									borderRadius: '20px',
-									backgroundColor: '#5d88c0',
-									textAlign: 'center',
-								}}
-							>
+							<div className='tarjeta'>
 								<h2>Solo Cristo</h2>
-								<p style={{ fontSize: '18px', color: '#F7F7FB' }}>
+								<p>
 									Jesucristo es el único camino y mediador hacia el Padre.
 								</p>
 							</div>
-							<div
-								style={{
-									border: '3px solid var(--primary-color)',
-									width: '250px',
-									height: '250px',
-									boxSizing: 'border-box',
-									display: 'flex',
-									justifyContent: 'center',
-									alignItems: 'center',
-									flexDirection: 'column',
-									borderRadius: '20px',
-									backgroundColor: '#5d88c0',
-									textAlign: 'center',
-								}}
-							>
+							<div className='tarjeta'>
 								<h2>Solo a Dios gloria</h2>
-								<p style={{ fontSize: '18px', color: '#F7F7FB' }}>
+								<p>
 									Toda la gloria y el honor pertenecen solo a Dios.
 								</p>
 							</div>
+
 						</div>
 					)}
 				</div>
-				<div className="contenedor-credos">
-					<div className="credo-niceno">
+				<div className="contenedor-credos col-12 col-md-3 col-lg-3 p-2">
+					
 						<h2>Credo Niceno</h2>
+						<hr />
+						
 						<p>
-							Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas ex
-							fugit placeat sit in ut nostrum aliquam, eaque est cupiditate
-							voluptate ratione eos necessitatibus, hic soluta autem explicabo a
-							earum!
+							Confesamos la fe apostólica expresada en el Credo Niceno, fundamento común de la ortodoxia cristiana universal a través de los siglos.
 						</p>
-						<button className="leer-credo" onClick={() => window.open('')}>
+						<button className="leer-credo text-white" onClick={() => window.open('')}>
 							Leer
 						</button>
-					</div>
+					
 				</div>
-				<div className="contenedor-credos">
-					<div className="estandares de Westminster">
+				<div className="contenedor-credos col-12 col-md-3 col-lg-3 p-2">
+					
 						<h2>Estandares de Westminster</h2>
+						<hr />
+						
 						<p>
-							Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas ex
-							fugit placeat sit in ut nostrum aliquam, eaque est cupiditate
-							voluptate ratione eos necessitatibus, hic soluta autem explicabo a
-							earum!
+							Nuestra doctrina se basa en las grandes confesiones de la Reforma y en la enseñanza bíblica a través de los siglos.
 						</p>
-						<button className="leer-credo" onClick={() => setCredo(true)}>
+						<button className="leer-credo text-white" onClick={() => setCredo(true)}>
 							Leer
 						</button>
 						{credo && (
-							<div
-								onClick={() => setCredo(false)}
-								style={{
-									position: 'fixed',
-									width: '100%',
-									height: '100%',
-									backgroundColor: 'rgba(20,32,58,0.92)',
-									top: 0,
-									left: 0,
-									display: 'flex',
-									justifyContent: 'center',
-									alignItems: 'center',
-									gap: '80px',
-								}}
-							>
-								<div
-									style={{
-										cursor: 'pointer',
-										minHeight: '180px',
-										maxWidth: '200px',
-										backgroundColor: '#142740',
-										borderRadius: '20px',
-									}}
+							<div className="fondo" onClick={() => setCredo(false)}>
+								<div className='tarjeta'
 									onClick={() =>
-										window.open('/credo/CatecismoMayordeWestminster.pdf')
-									}
-								>
+										window.open('/credo/CatecismoMayordeWestminster.pdf')}>
+
 									<h2>Catecismo Mayor De Westminster</h2>
 									<strong
-										style={{
-											fontSize: '30px',
-											color: 'var(--accent-color)',
-											fontWeight: 'bold',
-										}}
+										
 									>
 										Leer ↗
 									</strong>
 								</div>
-								<div
-									style={{
-										cursor: 'pointer',
-										minHeight: '180px',
-										maxWidth: '200px',
-										backgroundColor: '#142740',
-										borderRadius: '20px',
-									}}
+								<div className='tarjeta'
 									onClick={() =>
-										window.open('/credo/CatecismoMenordeWestminster.pdf')
-									}
-								>
+										window.open('/credo/CatecismoMenordeWestminster.pdf')}>
+
 									<h2>Catecismo Menor De Westminster</h2>
 									<strong
-										style={{
-											fontSize: '30px',
-											color: 'var(--accent-color)',
-											fontWeight: 'bold',
-										}}
+										
 									>
 										Leer ↗
 									</strong>
 								</div>
-								<div
-									style={{
-										cursor: 'pointer',
-										minHeight: '180px',
-										maxWidth: '200px',
-										backgroundColor: '#142740',
-										borderRadius: '20px',
-									}}
+								<div className='tarjeta'
 									onClick={() =>
-										window.open('/credo/confesion_de_fe_de_westminster.pdf')
-									}
-								>
+										window.open('/credo/confesion_de_fe_de_westminster.pdf')}>
+
 									<h2>
 										Confesión <br /> de Fé De Westminster
 									</h2>
 									<strong
-										style={{
-											fontSize: '30px',
-											color: 'var(--accent-color)',
-											fontWeight: 'bold',
-										}}
+										
 									>
 										Leer ↗
 									</strong>
@@ -260,8 +126,8 @@ const Creemos = () => {
 							</div>
 						)}
 					</div>
-				</div>
 			</div>
+			</main>
 		</>
 	);
 };

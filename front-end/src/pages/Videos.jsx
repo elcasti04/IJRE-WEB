@@ -1,121 +1,85 @@
-import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import './style/videos.css'
 
 const Videos = () => {
-	const [videos, setVideos] = useState([]);
-	const [loading, setLoading] = useState(true);
-	const [error, setError] = useState(null);
+	const [videoActivo, setVideoActivo] = useState(null);
+	const videos = [
+		{
+			id:1,
+			titulo: 'doma',
+			autor: 'josean log',
+			codigo: <iframe style={{borderRadius:'12px'}} width="300" height="220" src="https://www.youtube.com/embed/pCPYb7KPoUc?list=RDpCPYb7KPoUc" title="Jósean Log - Doma (Lyric Video)" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+		},
+		{
 
-	useEffect(() => {
-		axios
-			.get('http://localhost:3000/videos')
-			.then((response) => {
-				setVideos(response.data);
-				setLoading(false);
-			})
-			.catch((error) => {
-				setError(error.message);
-				setLoading(false);
-			});
-	}, []);
+			id:2,
+			titulo: 'luciernagas',
+			autor: 'milo j',
+			codigo: <iframe style={{borderRadius:'12px'}} width="300" height="220" src="https://www.youtube.com/embed/vSrQVMKcGyY?list=RDpCPYb7KPoUc" title="Milo J, Silvio Rodríguez - Luciérnagas (Letra)" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+		},
+		{
 
-	if (loading)
-		return (
-			<p style={{ textAlign: 'center', padding: '2rem' }}>
-				Cargando recursos espirituales...
-			</p>
-		);
-	if (error)
-		return (
-			<p
-				style={{
-					textAlign: 'center',
-					padding: '2rem',
-					color: 'var(--accent-color)',
-				}}
-			>
-				Error: {error}
-			</p>
-		);
+			id:3,
+			titulo: 'Lo que hay X aqui',
+			autor: 'rels B',
+			codigo: <iframe style={{borderRadius:'12px'}} width="300" height="220" src="https://www.youtube.com/embed/pCPYb7KPoUc?list=RDpCPYb7KPoUc" title="Jósean Log - Doma (Lyric Video)" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+		},
+		{
 
+			id:4,
+			titulo: 'Lo que hay X aqui',
+			autor: 'rels B',
+			codigo: <iframe style={{borderRadius:'12px'}} width="300" height="220" src="https://www.youtube.com/embed/pCPYb7KPoUc?list=RDpCPYb7KPoUc" title="Jósean Log - Doma (Lyric Video)" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+		}
+	]
 	return (
-		<div className="fade-in" style={{ padding: '2rem' }}>
-			<h1>Recursos</h1>
-			<p
-				style={{
-					textAlign: 'center',
-					marginBottom: '2rem',
-					fontStyle: 'italic',
-				}}
-			>
-				Inspírate con mensajes de fe y esperanza
-			</p>
-
-			{/* Si no hay videos mostrar mensaje */}
-			{videos.length === 0 ? (
-				<p style={{ textAlign: 'center', fontSize: '1.2rem' }}>
-					No hay recursos disponibles en este momento.
+		<>
+		<main className='predicas container-fluid text-black '>
+		<div>
+			<h1 className=''>La Palabra que transforma</h1>
+				<p>
+					<i>
+						Escucha nuestros mensajes y crece en el conocimiento de Cristo. Nuevas predicaciones cada semana 
+					en nuestro canal de <a href="https://www.youtube.com/channel/UCMkGUI4CEGK01_MNE6jl3dg" 
+					target='_blank'>Youtube</a>.
+					</i>
 				</p>
-			) : (
-				<ul
-					style={{
-						display: 'grid',
-						gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-						gap: '1rem',
-					}}
-				>
-					{videos.map((video) => (
-						<li
-							key={video.videoId}
-							className="fade-in"
-							style={{ textAlign: 'center' }}
-						>
-							{/* Miniatura del video */}
-							<img
-								src={video.thumbnail}
-								alt={video.title}
-								style={{
-									width: '100%',
-									borderRadius: 'var(--border-radius)',
-									marginBottom: '1rem',
-								}}
-							/>
 
-							{/* Título y fecha */}
-							<h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem' }}>
-								{video.title}
-							</h3>
-							<p
-								style={{
-									fontSize: '0.9rem',
-									color: 'var(--light-text)',
-									marginBottom: '1rem',
-								}}
-							>
-								Publicado: {new Date(video.published).toLocaleDateString()}
-							</p>
+			<div className='contenedor-predicas text-start d-flex flex-wrap justify-content-around'>
+				{videos.map((video, index) => (
+					<div key={index}>
+					<div className='d-flex flex-around p-2'>
+							<div style={{ borderBottom:'5px solid black', width:'300px', padding:'2px', borderRadius:'12px'}}>
+								<div className='w-10' style={{ borderRadius:'12px 12px 0px 0px'}}>
+									{video.codigo}
+									
+								</div>
+								<h3 className='text-white'>Canción</h3>
+									<div className='p-2'>
+										<i>{video.titulo.toUpperCase( )}</i>
+										<p><i>{video.autor.charAt(0).toUpperCase() + video.autor.slice(1)}</i></p>
+											
 
-							{/* Enlace externo a YouTube */}
-							<a
-								href={video.link}
-								target="_blank"
-								rel="noopener noreferrer"
-								style={{
-									display: 'inline-block',
-									padding: '0.5rem 1rem',
-									background: 'var(--primary-color)',
-									color: 'white',
-									borderRadius: 'var(--border-radius)',
-									textDecoration: 'none',
-								}}
-							>
-								Ver en YouTube
-							</a>
-						</li>
-					))}
-				</ul>
-			)}
+									</div>
+						</div>
+						
+					</div>
+					</div>
+				))}
+				
+				
+				
+			</div>
+			<br />
+			
 		</div>
+		<div className='ver d-flex justify-content-center rounded'>
+			<h2 onClick={() => 
+				window.open('https://www.youtube.com/channel/UCMkGUI4CEGK01_MNE6jl3dg')}
+				className='btn-ver rounded text-white text-center'>Ver mas en Youtube</h2>
+		</div>
+		</main>
+		</>
 	);
 };
 

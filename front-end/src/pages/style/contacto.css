@@ -1,0 +1,238 @@
+.contacto {
+    color: black;
+    font-family: "DM Serif Display", serif;
+    transition: transform 1s ease, opacity 1.5s ease;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    width: 100%;
+}
+
+.contacto h1 {  
+    color:#01069b;
+    font-size: 4em;
+}
+.formulario {
+    gap: 10px;
+    padding: 15px;
+    background-color: rgba(14, 146, 255,0.4);
+}
+
+.formulario textarea{
+    height: 90px;
+}
+
+.contac {
+    background-color: white;
+    padding: 10px;
+}
+.contac p{
+        font-family: "Gruppo", sans-serif;
+    font-size: 1.5em;
+    text-align: justify
+}
+
+.contacto button {
+    background-color: #0d6efd;
+    border-radius: 12px;
+    border-bottom: 3px solid black;
+}
+
+.contacto button:hover {
+    background-color: #012c6d;
+}
+
+
+.contenedor-pagos h1 {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    cursor: pointer;
+    font-size: 2rem;
+    transition: 0.3s;
+}
+
+.contenedor-pagos h1:hover {
+    color: #ff0000;
+}
+
+
+.contenedor-pagos > div:nth-child(2) {
+    background: #fff;
+    width: 100%;
+    max-width: 900px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+
+.infoDonacion,
+.pago {
+    border-radius: 10px;
+    background: #fafafa;
+}
+
+
+.infoDonacion label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: 200;
+    color: #333;
+}
+
+
+.infoDonacion input,
+.infoDonacion select,
+.infoDonacion textarea,
+.pago select {
+    width: 100%;
+    border: 1px solid #dcdcdc;
+    border-radius: 6px;
+    outline: none;
+    transition: all 0.3s;
+}
+
+.infoDonacion input:focus,
+.infoDonacion select:focus,
+.infoDonacion textarea:focus,
+.pago select:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 5px rgba(13,110,253,.3);
+}
+
+
+.infoDonacion textarea {
+    min-height: 60px;
+    resize: vertical;
+}
+
+
+.pago h3 {
+    text-align: center;
+    color: #333;
+    font-weight: 600;
+}
+
+.pago img {
+    object-fit: contain;
+}
+/* Tablets */
+@media (max-width: 768px) {
+
+    .contacto {
+        padding-top: 70px;
+        font-size: 1rem;
+        display: flex;
+        flex-direction: column;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contacto h1 {
+        font-size: 2rem;
+        text-align: center;
+        color: #ffffff;
+    }
+
+    .contac {
+        padding: 15px;
+    }
+
+    .formulario {
+        padding: 12px;
+    }
+
+    /* Modal de donación */
+    .contenedor-pagos > div:nth-child(2) {
+        flex-direction: column;
+        max-height: 90vh;
+        overflow-y: auto;
+        padding: 15px;
+    }
+
+    .infoDonacion,
+    .pago {
+        width: 100% !important;
+    }
+
+    .contenedor-pagos h1 {
+        top: 10px;
+        right: 15px;
+        font-size: 1.8rem;
+    }
+
+    .pago img {
+        width: 80px;
+    }
+}
+
+/* Celulares */
+@media (max-width: 480px) {
+
+    .contacto {
+        padding-top: 60px;
+        font-size: 0.95rem;
+        
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contacto h1 {
+        font-size: 1.7rem;
+        color: #ffffff;
+    }
+
+    .contac {
+        padding: 10px;
+    }
+
+    .formulario {
+        padding: 10px;
+        gap: 8px;
+    }
+
+    .formulario input,
+    .formulario textarea,
+    .formulario select,
+    .infoDonacion input,
+    .infoDonacion select,
+    .infoDonacion textarea,
+    .pago select {
+        font-size: 14px;
+    }
+
+    .contenedor-pagos > div:nth-child(2) {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .infoDonacion,
+    .pago {
+        padding: 10px !important;
+    }
+
+    .pago h3 {
+        font-size: 1.1rem;
+    }
+
+    .pago img {
+        width: 70px;
+    }
+
+    .contacto button {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .contenedor-pagos h1 {
+        font-size: 1.5rem;
+        right: 10px;
+    }
+}

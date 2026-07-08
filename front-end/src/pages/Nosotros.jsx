@@ -1,92 +1,52 @@
+import './style/nosotros.css'
+
 const Nosotros = () => {
 	return (
 		<>
-			<div>
-				<div
-					style={{
-						textAlign: 'center',
-						color: 'white',
-						background: 'linear-gradient(135deg, #1E4F8A 0%, #13345A 100%)',
-						marginBottom:'10px'
-					}}
-				>
-					<h2 style={{ color: 'white', fontSize: '30px' }}>Sobre Nosotros</h2>
-				</div>
-				<div
-					style={{
-						background: 'linear-gradient(135deg, #58913F 0%, #1E4F8A 100%)',
-					}}
-				>
-					<h1>Quines somos</h1>
-				</div>
-			</div>
-			<p style={{ textAlign: 'center' }}>
-				<strong>
-					Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut,
-					veritatis autem ullam quasi dolore sunt mollitia molestias nulla,
-					blanditiis earum illum magni possimus consequatur! Ipsum itaque odio
-					magni odit. Vel?
-				</strong>
-			</p>
+			<main className="nosotros container col">
+				<h1 className=''>Somos una familia que ama la <br />Palabra de Dios</h1>
+				<p className=''>
+					<i>
+						Somos una congregación reformada en San Pedro, Sucre. Creemos 
+						que la Biblia es la autoridad suprema para la fe y la vida, 
+						y queremos que cada persona que llegue encuentre un hogar espiritual.
+					</i>
+				</p>
 			<div
-				className="mision-vision"
-				style={{ display: 'flex', justifyContent: 'center', gap: '230px' }}
-			>
-				<div className="mision" style={{textAlign:'center', padding: '5px', width: '300px', backgroundColor:'rgb(195, 195, 219)', borderRadius:'20px' }}>
-					<h2>Mision</h2>
+				className="mision-vision col d-flex gap-5 ">
+				<div className="mision col-12 col-lg-6  p-2" >
+					<h4>Nuestra Mision</h4>
+					
+					<p>Predicar el evangelio con fidelidad</p>
 					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit,
-						quasi hic cumque porro inventore illo labore velit fugit deserunt
-						fugiat amet culpa exercitationem modi ab animi consequatur commodi
-						rerum iure?
+						Glorificar a Dios anunciando las buenas nuevas de Jesucristo, 
+						edificando creyentes en la fe reformada y sirviendo con amor a nuestra comunidad.
 					</p>
 				</div>
-				<div className="vision" style={{textAlign:'center', padding: '5px', width: '300px', backgroundColor:'rgb(195, 195, 219)', borderRadius:'20px' }}>
-					<h2>Vision</h2>
+				<div className="vision col-12 col-lg-6  p-2" >
+					<h4>Nuestra Vision</h4>
+					
+					<p>Multiplicar iglesias fieles en la Costa</p>
 					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit,
-						quasi hic cumque porro inventore illo labore velit fugit deserunt
-						fugiat amet culpa exercitationem modi ab animi consequatur commodi
-						rerum iure?
+						Ser un modelo de iglesia saludable que multiplique congregaciones 
+						comprometidas con la Escritura en toda la Costa Caribe colombiana.
 					</p>
 				</div>
 			</div>
-			<footer
-				style={{
-					padding: '10px 40px',
-					display: 'flex',
-					flexDirection: 'row',
-					fontSize:'10px'
-				}}
-			>
-				
-				<ul style={{ display: 'flex', gap: '30rem', listStyle: 'none' }}>
-					<li>
-						<h3>
-							<img style={{width:'20px'}}
+			<div className='footer col d-flex flex-wrap '>
+					<div className='ubi col-12 col-lg-6'>
+							<img
 								src="../../iconos/icons8-location.gif"
 								alt="icono de ubicacion"
-							/>{' '}
-							San Pedro Sucre (Colombia)
-						</h3>
-					</li>
-
-					<li>
-						<h3>
-							<img style={{width:'20px'}}
-								src="../../iconos/icons8-calendar.gif"
-								alt="icono de calendario"
-							/>{' '}
-							Servicios
-						</h3>
-						<ul>
-							<li>Domingos 9 A.M</li>
-							<li>Miercoles 7 P.M</li>
-							<li>Sabados 6 P.M (juvenil)</li>
-						</ul>
-					</li>
-				</ul>
-			</footer>
+							/>
+							<p>San Pedro Sucre (Colombia) {' '}
+							<span className='text-decoration-underline'
+							onClick={() => window.open('https://maps.app.goo.gl/2rr1qbBptamywnvYA')}>ver mapa ↗</span>
+							</p>
+					</div>
+				
+			</div>
+			</main>
 		</>
 	);
 };

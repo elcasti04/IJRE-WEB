@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import './style/info.css'
 
 const Info = () => {
 	const [infos, setInfos] = useState([]);
@@ -39,38 +40,33 @@ const Info = () => {
 		);
 
 	return (
-		<div className="fade-in" style={{ padding: '2rem' }}>
+		<>
+		<hr /><hr />
+		<main className='info container-fluid text-center'>
+			<div className="fade-in">
 			<h1>Informes Iglesia Evangelica Jesucristo Rey Eterno</h1>
-			<p
-				style={{
-					textAlign: 'center',
-					marginBottom: '2rem',
-					fontStyle: 'italic',
-					fontSize: '30px',
-				}}
-			>
-				Informes
-			</p>
+			
 
-			{/* Si no hay items, mostrar mensaje amigable */}
-			{infos.length === 0 ? (
-				<strong style={{ textAlign: 'center', fontSize: '1.2rem' }}>
+			
+			<div className='p-4'>
+				{infos.length === 0 ? (
+				<p style={{ textAlign: 'center', fontSize: '1.2rem' }}>
 					No hay información disponible en este momento.
-				</strong>
+				</p>
 			) : (
-				<ul>
+				<ul className='contenedor d-flex flex-column justify-content-center container-fluid gap-3'>
 					{infos.map((info) => (
-						<li key={info.id} className="fade-in">
-							{/* Título e información; estilos inline para simplicidad */}
-							<h3 style={{ color: 'var(--accent-color)' }}>{info.title}</h3>
-							<p style={{ fontSize: '1.1rem', lineHeight: '1.7' }}>
-								{info.info}
-							</p>
+						<li key={info.id} className="info-tarjeta">
+							<h3>{info.title}</h3>
+							<p><i>{info.info}</i></p>
 						</li>
 					))}
 				</ul>
 			)}
+			</div>
 		</div>
+		</main>
+		</>
 	);
 };
 

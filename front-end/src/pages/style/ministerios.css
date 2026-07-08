@@ -1,0 +1,103 @@
+.ministerios {
+    color: black;
+    font-family: "DM Serif Display", serif;
+    transition: transform 1s ease, opacity 1.5s ease;
+    padding-top: 100px;
+    width: 100%;
+}
+
+.ministerios h1 {  
+    color:#01069b;
+    font-size: 4em;
+}
+
+.ministerios p {
+    font-family: "Gruppo", sans-serif;
+    font-size: 1.5em;
+    text-align: justify;
+}
+
+.list-ministerios {
+    background-color: #01069b;
+}
+
+.info-card {
+    padding: 1rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 1px solid black;
+    border-radius: 12px;
+}
+
+.info-card p {
+    margin-bottom: 0;
+    white-space: normal;
+}
+
+@media (max-width: 768px) {
+
+    .ministerios {
+        padding-top: 40px;
+        padding-left: 15px;
+        padding-right: 15px;
+        font-size: 1rem;
+        min-height: auto;
+    }
+
+    .ministerios h1 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .ministerios p {
+        font-size: 1rem;
+    }
+
+    .list-ministerios {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .info-card {
+        width: 100%;
+        border-left: none;
+        border-top: 2px solid black;
+        border-radius: 12px;
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .ministerios {
+        padding-top: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .ministerios h1 {
+        font-size: 1.7rem;
+    }
+
+    .ministerios p {
+        font-size: 0.95rem;
+    }
+
+    .info-card {
+        padding: 12px;
+    }
+
+    .info-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .info-card h5 {
+        font-size: 1rem;
+    }
+}

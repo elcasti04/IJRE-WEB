@@ -1,0 +1,172 @@
+.lideres{
+    font-family: "DM Serif Display", serif;
+    font-size: 1.1em;
+    display: flex;
+    padding-top: 50px;
+    width: 100%;
+    color: black;
+}
+
+.lideres h1 {  
+    color:#01069b;
+    font-size: 4em;
+}
+
+.lideres h2 {
+    color:rgb(0, 0, 0);
+    font-size: 2em;
+}
+
+.lideres i {
+    font-family: "Gruppo", sans-serif;
+    font-size: 2.2em;
+    width: 80%;
+    
+}
+
+.cargo {
+    color:#01069b;
+}
+
+.contenedor {
+    width: 100%;
+    color: black;
+}
+
+.liderP img {
+    width: 100%;
+    border-radius: 12px 12px 0px 0px;
+}
+
+.liderP {
+    border-radius: 12px;
+    border-bottom: 5px solid black;
+    
+}
+.liderD {
+    width: 320px;
+    height: 420px;
+    padding: 4px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    border-bottom: 5px solid black;
+
+
+}
+
+.liderD img {
+    width: 100%;
+    border-radius: 12px 12px 0px 0px;
+    height: 210px;
+}
+.x{
+    text-align: end;
+    padding: 3px;
+    cursor: pointer;
+}
+.tarjeta-lider {
+    width: 400px;
+    padding: 2px;
+    height: 98%;
+    border-radius: 12px;
+}
+.tarjeta-lider p {
+    font-family: "Gruppo", sans-serif;
+    font-size: 1.5em;
+    text-align: justify; 
+}
+.bg {
+    background-color: #01069b;
+    width: 50%;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 12px;
+    color: white;
+    cursor: pointer;
+}
+.bg:hover {
+    background-color: #5f62cb;
+}
+
+@media (max-width: 768px) {
+
+    .lideres {
+        flex-direction: column;
+        padding: 30px 15px;
+        font-size: 1rem;
+    }
+
+    .lideres h1 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .lideres h2 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .liderP {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .liderD {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .liderD img,
+    .liderP img {
+        width: 100%;
+        height: auto;
+    }
+
+    .tarjeta-lider {
+        width: 95%;
+        height: auto;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    .bg {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .lideres {
+        padding: 20px 10px;
+    }
+
+    .lideres h1 {
+        font-size: 1.7rem;
+    }
+
+    .lideres h2 {
+        font-size: 1.2rem;
+    }
+
+    .liderD {
+        padding: 10px;
+    }
+
+    .tarjeta-lider {
+        width: 100%;
+        border-radius: 8px;
+    }
+    .text {
+    border-bottom: 2px solid black;
+    }
+
+    .tarjeta-lider p {
+        font-size: 14px;
+    }
+
+    .bg {
+        font-size: 14px;
+        padding: 8px;
+    }
+}

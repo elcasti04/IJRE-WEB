@@ -1,0 +1,150 @@
+.creemos {
+    font-family: "DM Serif Display", serif;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px;
+    font-size: 1.1em;
+}
+
+.creemos h1{
+    color:#01069b;
+    font-size: 4em;
+}
+
+.creemos i{
+    font-family: "Gruppo", sans-serif;
+    font-size: 2.2em;
+    width: 80%;
+
+}
+
+.contenedor {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contenedor-credos {
+    
+    border-radius: 12px;
+    border-bottom: 2px solid black;
+}
+.contenedor-credos h2 {
+    color: rgb(0, 0, 0);
+}
+
+.contenedor-credos p {
+    font-family: "Gruppo", sans-serif;
+    font-size: 1.2em;
+    width: 80%;
+    text-align: justify;
+}
+
+.contenedor-credos button {
+    border-radius: 12px;
+    width: 150px;
+    height: 30px;
+}
+.leer-credo {
+    background-color: #01069b;
+}
+
+.fondo {
+    position: fixed;
+    width: 100%;
+	height: 100%;
+	background-color: rgba(20,32,58,1);
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	gap: 30px;
+    z-index: 1001;
+}
+
+.tarjeta {
+	border: 3px solid var(--primary-color);
+	width: 250px;
+	height: 250px;
+    color: white;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	border-radius: 20px;
+	background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(177, 172, 172, 0.95) 100%);
+	text-align: center;
+    padding: 10px;
+    cursor: pointer;				
+}
+.tarjeta h2{
+    color: white;
+}
+
+@media (max-width: 800px) {
+
+    .creemos {
+        padding: 30px 15px;
+        height: auto;
+        font-size: 1rem;
+    }
+
+    .creemos h1 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .contenedor {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .contenedor-credos {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        min-width: 95%;
+    }
+
+    .fondo {
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px;
+        overflow-y: auto;
+    }
+
+    .tarjeta {
+        width: 90%;
+        max-width: 450px;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .creemos {
+        padding: 18px 12px;
+    }
+
+    .creemos h1 {
+        font-size: 1.7rem;
+    }
+
+    .contenedor-credos h2 {
+        font-size: 1.3rem;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .tarjeta {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .contenedor-credos button {
+        width: 100%;
+    }
+}

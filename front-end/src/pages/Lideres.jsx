@@ -1,16 +1,20 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import './style/lideres.css'
 
 const Lideres = () => {
 	const [lideres, setLideres] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
+	const [infoLider, setInfoLider] = useState(null)
+
+
+	const API_URL = 'http://localhost:3000/'
 
 	useEffect(() => {
 		axios
 			.get('http://localhost:3000/lideres')
 			.then((response) => {
-				// Si es un array, usarlo directamente; si es un objeto con liders, usar eso
 				setLideres(
 					Array.isArray(response.data)
 						? response.data
@@ -42,66 +46,84 @@ const Lideres = () => {
 		);
 
 	return (
-		<div className="fade-in" style={{ padding: '2rem' }}>
-			<h1>Nuestros Líderes Espirituales</h1>
-			<p
-				style={{
-					textAlign: 'center',
-					marginBottom: '2rem',
-					fontStyle: 'italic',
-				}}
-			>
-				Guías dedicados a servir y fortalecer nuestra comunidad en fe
+		<>
+		<main className='lideres container-fluid'>
+			<div className="">
+			<h4><strong><strong className='inicial'>N</strong>uestros Lideres</strong></h4>
+			<h1 className=''>Personas que sirven con amor</h1>
+			<p>
+				<i>
+					Nuestra iglesia es pastoreada por hombres comprometidos con el evangelio y el bienestar de la congregación.
+				</i>
 			</p>
+			<br /><br />
 			{lideres.length === 0 ? (
-				<p style={{ textAlign: 'center', fontSize: '1.2rem' }}>
-					No hay líderes disponibles en este momento.
+				<p >
+					<h2 className='text-danger'>⚠</h2> No hay líderes disponibles en este momento.
 				</p>
 			) : (
-				<ul
-					style={{
-						display: 'grid',
-						gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-						gap: '1rem',
-					}}
-				>
-					{lideres.map((lider) => (
-						<li
-							key={lider.id}
-							className="fade-in"
-							style={{ textAlign: 'center' }}
-						>
-							<img
-								src={
-									lider.image && lider.image.startsWith('/')
-										? `http://localhost:3000${lider.image}`
-										: lider.image
-								}
-								alt={lider.nombre}
-								style={{
-									width: '120px',
-									height: '120px',
-									borderRadius: '50%',
-									objectFit: 'cover',
-									marginBottom: '1rem',
-									border: '4px solid var(--primary-color)',
-								}}
-							/>
-							<h3
-								style={{ color: 'var(--accent-color)', marginBottom: '0.5rem' }}
-							>
-								{lider.nombre}
-							</h3>
-							<p
-								style={{ fontWeight: 'bold', color: 'var(--secondary-color)' }}
-							>
-								{lider.cargo}
-							</p>
-						</li>
-					))}
-				</ul>
+				<div>
+					<div className="contenedor  d-flex col justify-content-between ">
+						
+							
+
+							<div className="demas d-flex p-2 position-relative col">
+								<div className='d-flex flex-wrap justify-content-between gap-5 col-12 '>
+								{lideres.map((lider) => (
+									<div className="liderD p-3 " key={lider.nombre}>
+										<img src={`http://localhost:3000${lider.image}`} alt={lider.nombre} />
+										<hr />
+										<h5 className='cargo'>{lider.cargo}</h5>
+										<h5>{lider.nombre}</h5>
+										<p onClick={() => setInfoLider(lider.id)} 
+										className='bg'>Ver mas</p>
+
+
+										{infoLider === lider.id && (
+											<div  style={{
+												position: 'fixed',
+												top: 0,
+												left: 0,
+												width: '100%',
+												height: '100%',
+												background: 'rgba(20,32,58,1)',
+												display: 'flex',
+												justifyContent: 'center',
+												alignItems: 'center',
+												zIndex: '1001',
+												borderRadius: '12px',
+												padding: '4em',
+											}}>
+												<div className='tarjeta-lider bg-white p-3' >
+													<header onClick={(e) => { e.stopPropagation();
+											setInfoLider(null)}} className='x text-black'>
+												<strong>
+													X
+												</strong>
+												</header>
+													<div className='text'>
+													<img src={`http://localhost:3000${lider.image}`} alt="" />
+													<h5 style={{borderBottom:'1px solid black', width:'50%', top:'10px'}}>{lider.nombre}</h5>
+													<h6>{lider.cargo}</h6>
+													<p>{lider.info}</p>
+													</div>
+												</div>
+											</div>
+										)}
+									</div>	
+									))}
+								</div>
+							</div>
+						</div>
+				</div>
 			)}
+			
 		</div>
+		
+		</main>
+		</>
+
+							
 	);
 };
 

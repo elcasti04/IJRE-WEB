@@ -4,13 +4,15 @@ import { Lideres } from '../models/lideres.model.js';
 export const getLideres = catchError(async (req, res) => {
 	try {
 		const liders = await Lideres.findAll({
-			attributes: ['id', 'nombre', 'cargo', 'image'],
+			attributes: ['id', 'nombre', 'cargo', 'info', 'image'],
 		});
 		res.json({ liders });
 	} catch (error) {
 		res.status(500).json({ message: 'Error al obtener líderes' });
 	}
+
 });
+
 
 export const getOneLider = catchError(async (req, res) => {
 	try {

@@ -1,0 +1,162 @@
+
+.Inicio {
+   background-image:
+        linear-gradient(rgba(0, 17, 255, 0.1), rgba(0, 0, 0, 0.9)),
+        url('/img/fotoIglesia.jpg');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    width: 100%;
+    height: 100vh;
+    font-family: "DM Serif Display", serif;
+    color: white; 
+	padding: 15px;
+	border-radius: 0px 0px 12px 12px;
+	text-align: center;
+	
+}
+
+.Inicio h1 {
+    color:#ffffff;
+    font-size: 4.5em;  
+}
+
+.cita i{
+	text-align: center;
+	font-family: "Gruppo", sans-serif;
+    font-size: 2em;
+    width: 80%;
+}
+
+.Inicio h4, .Inicio h3{
+	color:#ffffff;
+    font-size: 2em;
+}
+.Inicio hr {
+	width: 150px;
+    height: 4px;    
+    background-color: rgb(255, 255, 255);
+    border: none;
+    margin: 0 auto;
+}
+
+.siglas{
+    font-size: 2em;
+    color: #b1b4ff;
+}
+.cita {
+    font-size: 1rem;
+}
+
+
+
+
+.botones {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.botones button{
+    background-color: #020791;
+    color: white;
+    border-radius: 12px;
+    width: 150px;
+    height: 30px;
+}
+.eslogan {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(7, 54, 115, 0.95) 0%, rgba(219, 217, 245, 0.95) 100%);
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 25px var(--shadow)
+					
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+	.Inicio {
+		min-height: 80vh;
+		padding: 20px;
+	}
+
+	.Inicio h1 {
+		font-size: 2.4rem;
+		text-align: center;
+	}
+
+	.siglas {
+		font-size: 2rem;
+	}
+
+	.cita {
+		font-size: 1.1rem;
+		text-align: center;
+	}
+
+	.botones {
+		gap: 20px;
+	}
+
+	.eslogan {
+		padding: 1rem;
+	}
+}
+
+/* Móviles */
+@media (max-width: 576px) {
+	.Inicio {
+		min-height: 100vh;
+		padding: 15px;
+	}
+
+	.Inicio h1 {
+		font-size: 1.8rem;
+		line-height: 1.2;
+		text-align: center;
+	}
+
+	.siglas {
+		font-size: 1.4rem;
+		text-align: center;
+	}
+
+	.cita {
+		font-size: 1rem;
+		text-align: center;
+		padding: 0 10px;
+	}
+
+	.botones {
+		flex-direction: column;
+		align-items: center;
+		gap: 15px;
+	}
+
+	.botones button {
+		width: 100%;
+		max-width: 250px;
+		height: 40px;
+		font-size: 0.9rem;
+	}
+
+	.eslogan {
+		margin-top: 1.5rem;
+		padding: 1rem;
+		font-size: 0.95rem;
+	}
+}
+
+.servicios {
+	box-sizing: border-box;
+	color: black;	
+	padding: 20px;
+}
+
+.servicios ul {
+	list-style: none;
+	font-family: 'Times New Roman', Times, serif;
+}

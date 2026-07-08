@@ -25,13 +25,26 @@ export const getImageMinisterio = catchError(async (req, res) => {
 })
 
 export const createImage = catchError(async (req, res) => {
-    const { ministerio, info, image } = req.body
-    const imagen = await Galeria.create({ ministerio, info, image })
-    res.send(imagen)
-})
+    const body = req.body || {};
+    const { ministerio, info } = body;
+
+    if (!ministerio || !info) {
+        return res.status(400).json({
+            message: 'ministerio and info are required',
+            body,
+            file: req.file ? `/uploads/galeria/${req.file.filename}` : null,
+        });
+    }
+
+    const image = req.file
+        ? `/uploads/galeria/${req.file.filename}`
+        : body.image;
+    const imagen = await Galeria.create({ ministerio, info, image });
+    res.send(imagen);
+});
 
 export const deleteImage = catchError(async (req, res) => {
-    const { id } = req.params
-    await Galeria.destroy({ where: { id } })
-    res.send('imagen eliminada')
-})
+    const { id } = req.params;
+    await Galeria.destroy({ where: { id } });
+    res.send('imagen eliminada');
+});
