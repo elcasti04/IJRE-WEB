@@ -5,13 +5,13 @@
     color: black;
     font-family: "DM Serif Display", serif;
     transition: transform 1s ease, opacity 1.5s ease;
-    padding-top: 100px;
+    padding: 100px;
     width: 100%;
 }
 
 .nosotros h1 {
-    color:#01069b;
-    font-size: 4em;
+    color:#000000;
+    font-size: 3em;
 }
 
 .nosotros h2, .nosotros h4, .nosotros h3 {
@@ -19,6 +19,10 @@
     font-size: 2em;
 }
 
+.ver-h{
+    cursor: pointer;
+    border-bottom: 2px solid black;
+}
 
 
 .nosotros h3 {
@@ -28,7 +32,7 @@
     padding: 5px;
 }
 .nosotros h4 {
-    color:#01069b;
+    color:#000000;
     font-size: 2em;
     padding: 5px;
     border-bottom: 2px solid #01069b;
@@ -40,12 +44,12 @@
     width: 80%;
     
 }
-
-.mision p, .vision p {
+.nosotros p {
     font-family: "Gruppo", sans-serif;
     font-size: 1.5em;
-    text-align: justify;    
+    text-align: justify;   
 }
+
 
 .footer {
     font-size: 1em;
@@ -66,6 +70,7 @@
 .inicial {
     font-size: 50px;
 }
+
 
 @media (max-width: 768px) {
 

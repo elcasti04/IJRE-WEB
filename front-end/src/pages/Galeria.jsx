@@ -12,14 +12,6 @@ const Galeria = () => {
 	const [loaded, setLoaded] = useState(false);
 	const [slideKey, setSlideKey] = useState(0);
 
-	const ministerios = [
-		'Todo',
-		'Damas',
-		'Caballeros',
-		'Jovenes',
-		'Niños',
-	];
-
 	useEffect(() => {
 		axios
 			.get(`${BACKEND_URL}/galeria`)
@@ -91,7 +83,7 @@ const Galeria = () => {
 
 	return (
 		<>
-			<main className="container-fluid galeria">
+			<main className="container galeria">
 				<h1 >Nuestra vida en comunidad</h1>
 				<p><i>Conoce las actividades de cada ministerio a través de nuestras fotografías.</i></p>
 				<div className="contenedor-galeria ">
@@ -102,8 +94,8 @@ const Galeria = () => {
 									<p>No hay imágenes disponibles en este ministerio.</p>
 								</div>
 							) : (
-								<div className='cont d-flex justify-content-around gap-5'>
-									
+								<div className='cont container d-flex justify-content-around gap-5'>
+								<button className='nav-button' onClick={() => previousImage()}>◀</button>
 								<img
 									className="galeria-imagen"
 									src={imageSrc}
@@ -111,9 +103,12 @@ const Galeria = () => {
 									onLoad={() => setLoaded(true)}
 									style={{ opacity: loaded ? 1 : 0.4 }}
 								/>
+								<button className='nav-button' onClick={() => nextImage()}>▶</button>
 								{currentImage?.info && (
 									<div className="gallery-info">
+										
 										<p>{currentImage.info}</p>
+										
 									</div>
 								)}
 								</div>

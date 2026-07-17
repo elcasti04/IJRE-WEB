@@ -1,21 +1,20 @@
 .creemos {
+    color: black;
     font-family: "DM Serif Display", serif;
-    width: 100%;
-    min-height: 100vh;
+    transition: transform 1s ease, opacity 1.5s ease;
     padding: 100px;
-    font-size: 1.1em;
+    width: 100%;
 }
 
 .creemos h1{
-    color:#01069b;
-    font-size: 4em;
+    color:#000000;
+    font-size: 3em;
 }
 
-.creemos i{
+.creemos p{
     font-family: "Gruppo", sans-serif;
-    font-size: 2.2em;
-    width: 80%;
-
+    font-size: 1.5em;
+    text-align: justify;
 }
 
 .contenedor {
@@ -55,33 +54,26 @@
 	background-color: rgba(20,32,58,1);
 	top: 0;
 	left: 0;
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	gap: 30px;
+    padding-left: 40px;
+    padding-right: 40px;
     z-index: 1001;
 }
 
-.tarjeta {
-	border: 3px solid var(--primary-color);
-	width: 250px;
-	height: 250px;
+.solas {
+    width: 50%;
     color: white;
-	box-sizing: border-box;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
 	border-radius: 20px;
-	background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(177, 172, 172, 0.95) 100%);
-	text-align: center;
-    padding: 10px;
-    cursor: pointer;				
+    list-style: lower-roman;				
 }
-.tarjeta h2{
+.solas h2{
     color: white;
 }
-
+.solas strong {
+    width: 600px;
+    border-bottom: 2px solid white;
+    box-sizing: border-box;
+    cursor: pointer;
+}
 @media (max-width: 800px) {
 
     .creemos {

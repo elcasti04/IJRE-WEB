@@ -57,7 +57,7 @@ const Ministerios = () => {
 
     return (
         <>
-        <main className="ministerios container-fluid col">
+        <main className="ministerios container col">
             
             <h1>Un lugar para cada uno</h1>
             <p className='col-9'>

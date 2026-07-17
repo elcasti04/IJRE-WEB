@@ -83,24 +83,24 @@ const Admin = () => {
 	}
 
 	// ================= INFO =================
-	const handleAddInfo = async () => {
-		try {
-			await api.post('admin/info', newInfo);
-			setNewInfo({ title: '', info: '' });
-			fetchData();
-		} catch (error) {
-			console.error(error);
-		}
-	};
+	// const handleAddInfo = async () => {
+	// 	try {
+	// 		await api.post('admin/info', newInfo);
+	// 		setNewInfo({ title: '', info: '' });
+	// 		fetchData();
+	// 	} catch (error) {
+	// 		console.error(error);
+	// 	}
+	// };
 
-	const handleDeleteInfo = async (id) => {
-		try {
-			await api.delete(`/admin/info/${id}`);
-			fetchData();
-		} catch (error) {
-			console.error(error);
-		}
-	};
+	// const handleDeleteInfo = async (id) => {
+	// 	try {
+	// 		await api.delete(`/admin/info/${id}`);
+	// 		fetchData();
+	// 	} catch (error) {
+	// 		console.error(error);
+	// 	}
+	// };
 
 
 
@@ -159,9 +159,9 @@ const Admin = () => {
 				<button onClick={handleLogout}>Cerrar sesión</button>
 			</div>
 
-			<div className='INFORMACION'>
+			{/* <div className='INFORMACION'>
 							
-			{/* ===== INFO ===== */}
+			 ===== INFO ===== 
 			<h2>Información</h2>
 			<ul>
 				{infos.map((info) => (
@@ -185,7 +185,7 @@ const Admin = () => {
 			<button onClick={handleAddInfo}>Agregar Info</button>
 			</div>
 
-			<hr />
+			<hr /> */}
 
 
 			<div className='LIDERES col d-flex'>

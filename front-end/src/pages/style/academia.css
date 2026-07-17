@@ -2,13 +2,13 @@
     color: black;
     font-family: "DM Serif Display", serif;
     transition: transform 1s ease, opacity 1.5s ease;
-    padding-top: 100px;
+    padding: 100px;
     width: 100%;
 }
 
 .academia h1 {
-    color:#01069b;
-    font-size: 4em;
+    color:#000000;
+    font-size: 3em;
 }
 
 .contenedor {
@@ -27,7 +27,7 @@
     color:rgb(0, 0, 0);
     font-size: 2em;
     margin-bottom: 20px;
-    border-bottom: 3px solid #14203a;
+    border-bottom: 3px solid #01069b;
     padding-bottom: 10px;
 }
 
@@ -63,7 +63,7 @@
 /* Descripción */
 .academia p {
     font-family: "Gruppo", sans-serif;
-    font-size: 1.8em;
+    font-size: 1.5em;
     width: 80%;
 }
 

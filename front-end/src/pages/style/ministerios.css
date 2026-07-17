@@ -2,13 +2,13 @@
     color: black;
     font-family: "DM Serif Display", serif;
     transition: transform 1s ease, opacity 1.5s ease;
-    padding-top: 100px;
+    padding: 100px;
     width: 100%;
 }
 
 .ministerios h1 {  
     color:#01069b;
-    font-size: 4em;
+    font-size: 3em;
 }
 
 .ministerios p {

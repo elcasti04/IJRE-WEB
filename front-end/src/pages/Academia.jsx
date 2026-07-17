@@ -29,8 +29,7 @@ function Academia () {
     
     return (
         <>
-        <main className="academia container-fluid">
-            <h4><strong><strong className='inicial'>A</strong>cademia</strong></h4>
+        <main className="academia container">
             <h1>Preparacion para la gran Comisión</h1>
             <p>
                 <i>

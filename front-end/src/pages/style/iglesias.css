@@ -2,7 +2,7 @@
     color: black;
     font-family: "DM Serif Display", serif;
     transition: transform 1s ease, opacity 1.5s ease;
-    padding-top: 100px;
+    padding: 100px;
     width: 100%;
 }
 .contenedor- {
@@ -13,8 +13,8 @@
 }
 
 .iglesias h1{
-    color:#01069b;
-    font-size: 4em;
+    color:#000000;
+    font-size: 3em;
 }
 
 .iglesias p {

@@ -19,6 +19,7 @@ import Galeria from './pages/Galeria';
 import Ministerios from './pages/ministerios';
 import Academia from './pages/Academia';
 import Footer from './pages/footer';
+import Historia from './pages/historia';
 
 function Home() {
 	return (
@@ -76,6 +77,8 @@ function App() {
 			<Route path="/Iglesias" element={<Iglesias />} />
 			<Route path="/Contacto" element={<Contacto />} />
 			<Route path="/Admin" element={<Admin />} />
+			<Route path="/Admin" element={<Admin />} />
+			<Route path="/Historia" element={<Historia />} />
 			
 			
 		</Routes>

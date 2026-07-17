@@ -47,9 +47,8 @@ const Lideres = () => {
 
 	return (
 		<>
-		<main className='lideres container-fluid'>
+		<main className='lideres container'>
 			<div className="">
-			<h4><strong><strong className='inicial'>N</strong>uestros Lideres</strong></h4>
 			<h1 className=''>Personas que sirven con amor</h1>
 			<p>
 				<i>

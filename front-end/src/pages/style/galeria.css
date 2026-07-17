@@ -3,22 +3,27 @@
     padding: 100px;
     width: 100%;
     color: black;
-    background: #f4f6fb;
     font-size: 1.1em;
 }
 
 .galeria h1 {
-    color:#01069b;
-    font-size: 4em;
+    color:#000000;
+    font-size: 3em;
     display: inline-block;
 }
 
 .galeria p{
-        font-family: "Gruppo", sans-serif;
-    font-size: 2.2em;
-    width: 80%;
+    font-family: "Gruppo", sans-serif;
+    font-size: 1.5em;
+    text-align: justify;
 }
 
+.cont {
+        display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
 
 .contenedor-galeria {
     display: flex;
@@ -113,7 +118,7 @@
     width: 100%;
     min-height: 420px;
     display: flex;
-    justify-content: space-between00000000000000000000000000000000000000000000000000000000000000000000ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo;
+    justify-content: space-between;
     align-items: center;
     padding: 24px;
     color: #1f2937;
@@ -126,12 +131,12 @@
     object-fit: cover;
     border-radius: 0;
     transition: opacity 0.35s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .nav-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
     width: 48px;
     height: 48px;
     border-radius: 50%;
@@ -141,9 +146,6 @@
     color: #0f172a;
     font-size: 1.8rem;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .nav-button.left {

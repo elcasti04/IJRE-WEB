@@ -2,14 +2,14 @@
     font-family: "DM Serif Display", serif;
     font-size: 1.1em;
     display: flex;
-    padding-top: 50px;
+    padding: 100px;
     width: 100%;
     color: black;
 }
 
 .lideres h1 {  
-    color:#01069b;
-    font-size: 4em;
+    color:#000000;
+    font-size: 3em;
 }
 
 .lideres h2 {
@@ -17,11 +17,10 @@
     font-size: 2em;
 }
 
-.lideres i {
+.lideres p{
     font-family: "Gruppo", sans-serif;
-    font-size: 2.2em;
-    width: 80%;
-    
+    font-size: 1.5em;
+    text-align: justify;
 }
 
 .cargo {

@@ -4,15 +4,35 @@ import './style/creemos.css'
 const Creemos = () => {
 	const [ver, setVer] = useState(false);
 	const [credo, setCredo] = useState(false);
+	const solas = [
+		{
+			sola:'Solo Escritura',
+			texto:'La Biblia es la única autoridad suprema para el creyente.'
+		},
+		{
+			sola:'Solo Fé',
+			texto:'La salvación se recibe solo por la fe, sin obras.'
+		},
+		{
+			sola:'Solo Gracia',
+			texto:'La salvación es un regalo gratuito y no merecido de Dios.'
+		},
+		{
+			sola:'Solo Cristo',
+			texto:'Jesucristo es el único camino y mediador hacia el Padre.'
+		},
+		{
+			sola:'Solo a Dios gloria',
+			texto:'Toda la gloria y el honor pertenecen solo a Dios.'
+		},
+	]
 	return (
 		<>
 		
-			<main className="creemos container-fluid">
-			
-				<h4><strong><strong className='inicial'>L</strong>o que creemos</strong></h4>
+			<main className="creemos container">
 				<h1 className=''>Anclados en la fe histórica</h1>
 				<p>
-					<i>Nuestra doctrina se basa en las grandes confesiones de la Reforma y en la enseñanza bíblica a través de los siglos.</i>
+					Nuestra doctrina se basa en las grandes confesiones de la Reforma y en la enseñanza bíblica a través de los siglos.
 				</p>
 			<div className="contenedor col p-5 gap-3">
 				<div className="contenedor-credos col-12 col-md-3 col-lg-3 p-2">
@@ -25,42 +45,22 @@ const Creemos = () => {
 						<button className='leer-credo text-white' onClick={() => setVer(true)}>
 							Ver
 						</button>
-					
-					{ver && (
-						<div className='fondo container-fluid' onClick={() => setVer(false)}>
-							<div className='tarjeta'>
-								<h2>Solo Escritura</h2>
-								<p>
-									La Biblia es la única autoridad suprema para el creyente.
-								</p>
-							</div>
-							<div className='tarjeta'>
-								<h2>Solo Fé</h2>
-								<p>
-									La salvación se recibe solo por la fe, sin obras.
-								</p>
-							</div>
-							<div className='tarjeta'>
-								<h2>Solo Gracia</h2>
-								<p>
-									La salvación es un regalo gratuito y no merecido de Dios.
-								</p>
-							</div>
-							<div className='tarjeta'>
-								<h2>Solo Cristo</h2>
-								<p>
-									Jesucristo es el único camino y mediador hacia el Padre.
-								</p>
-							</div>
-							<div className='tarjeta'>
-								<h2>Solo a Dios gloria</h2>
-								<p>
-									Toda la gloria y el honor pertenecen solo a Dios.
-								</p>
-							</div>
-
+						{ver && (
+						
+						<div className='fondo container-fluid' >
+							<h2 onClick={() => setVer(false)} 
+							style={{color:'white', textAlign:'end', cursor:'pointer'}}>x</h2>
+							<ul >
+								{solas.map((sola, index) => (
+									<li className='solas' key={index}>
+										<h2>{sola.sola}</h2>
+										<p>{sola.texto}</p>
+									</li>
+								))}
+							</ul>
 						</div>
 					)}
+					
 				</div>
 				<div className="contenedor-credos col-12 col-md-3 col-lg-3 p-2">
 					
@@ -87,41 +87,29 @@ const Creemos = () => {
 							Leer
 						</button>
 						{credo && (
-							<div className="fondo" onClick={() => setCredo(false)}>
-								<div className='tarjeta'
-									onClick={() =>
+							<div className="fondo" >
+								<h2 onClick={() => setCredo(false)}
+								style={{color:'white', textAlign:'end', cursor:'pointer'}}>x</h2>
+								<div className='solas'
+									onClick={() => 
 										window.open('/credo/CatecismoMayordeWestminster.pdf')}>
-
 									<h2>Catecismo Mayor De Westminster</h2>
-									<strong
-										
-									>
-										Leer ↗
-									</strong>
+									<strong>Leer ↗</strong>
 								</div>
-								<div className='tarjeta'
+								<div className='solas'
 									onClick={() =>
 										window.open('/credo/CatecismoMenordeWestminster.pdf')}>
 
 									<h2>Catecismo Menor De Westminster</h2>
-									<strong
-										
-									>
-										Leer ↗
-									</strong>
+									<strong>Leer ↗</strong>
 								</div>
-								<div className='tarjeta'
+								<div className='solas'
 									onClick={() =>
 										window.open('/credo/confesion_de_fe_de_westminster.pdf')}>
-
 									<h2>
 										Confesión <br /> de Fé De Westminster
 									</h2>
-									<strong
-										
-									>
-										Leer ↗
-									</strong>
+									<strong>Leer ↗</strong>
 								</div>
 							</div>
 						)}

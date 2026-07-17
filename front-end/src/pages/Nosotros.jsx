@@ -1,17 +1,33 @@
 import './style/nosotros.css'
+import { useNavigate } from 'react-router-dom'
 
 const Nosotros = () => {
+
+	const navigate = useNavigate()
+
 	return (
 		<>
 			<main className="nosotros container col">
-				<h1 className=''>Somos una familia que ama la <br />Palabra de Dios</h1>
-				<p className=''>
-					<i>
+				<h1 >Somos una familia que ama la <br />Palabra de Dios</h1>
+				<p>
+					
 						Somos una congregación reformada en San Pedro, Sucre. Creemos 
 						que la Biblia es la autoridad suprema para la fe y la vida, 
 						y queremos que cada persona que llegue encuentre un hogar espiritual.
-					</i>
+					
 				</p>
+				<br />
+				<h1>Nuestra Historia</h1>
+				<div className='d-flex align-items-center gap-5'>
+					<img className='border rounded' width={'400px'} src="img/logo2.jpeg" alt="" />
+					<p className='mision'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem fugiat optio incidunt quas saepe autem alias deserunt. Sed deserunt necessitatibus temporibus, similique nemo voluptatem repellendus esse molestiae voluptate. Non, eum?
+						<br />
+						<strong 
+						onClick={() => navigate('/Historia')}
+						className='ver-h'>Ver Historia ➡</strong>
+					</p>
+				</div>
+				<br />
 			<div
 				className="mision-vision col d-flex gap-5 ">
 				<div className="mision col-12 col-lg-6  p-2" >
