@@ -61,9 +61,7 @@ const Ministerios = () => {
             
             <h1>Un lugar para cada uno</h1>
             <p className='col-9'>
-                <i>
                     Tenemos espacios para todas las etapas de la vida. Cada ministerio está comprometido con el crecimiento en la fe y el amor fraternal.
-                </i>
             </p>
                 
                 <div className="list-ministerios d-flex gap-5 text-white justify-content-center">
@@ -75,7 +73,7 @@ const Ministerios = () => {
                             textAlign:'center',
                             width:'100',
                             alignItems:'center',
-                            borderBottom: mins === ministerio ? "3px solid rgb(255, 0, 0)" : "none",
+                            borderBottom: mins === ministerio ? "3px solid #ffd700" : "none",
                             fontWeight: mins === ministerio ? "bold" : "normal"
                         }} >{ministerio}
                     </p>

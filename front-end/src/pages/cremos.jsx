@@ -40,7 +40,7 @@ const Creemos = () => {
 						<h2>5 Solas de la reforma</h2>
 						<hr />
 						<p>
-							Sola Scriptura, Sola Fide, Sola Gratia, Solus Christus, Soli Deo Gloria. Estos cinco principios resumen el corazón de la fe evangélica reformada.
+							Son los principios fundamentales de la Reforma Protestante que resumen las verdades esenciales del Evangelio.
 						</p>
 						<button className='leer-credo text-white' onClick={() => setVer(true)}>
 							Ver
@@ -50,7 +50,7 @@ const Creemos = () => {
 						<div className='fondo container-fluid' >
 							<h2 onClick={() => setVer(false)} 
 							style={{color:'white', textAlign:'end', cursor:'pointer'}}>x</h2>
-							<ul >
+							<ul className='d-flex gap-4'>
 								{solas.map((sola, index) => (
 									<li className='solas' key={index}>
 										<h2>{sola.sola}</h2>
@@ -89,14 +89,17 @@ const Creemos = () => {
 						{credo && (
 							<div className="fondo" >
 								<h2 onClick={() => setCredo(false)}
+								
 								style={{color:'white', textAlign:'end', cursor:'pointer'}}>x</h2>
+								<div className='d-flex justify-content-around'>
 								<div className='solas'
 									onClick={() => 
 										window.open('/credo/CatecismoMayordeWestminster.pdf')}>
 									<h2>Catecismo Mayor De Westminster</h2>
 									<strong>Leer ↗</strong>
 								</div>
-								<div className='solas'
+								
+									<div className='solas'
 									onClick={() =>
 										window.open('/credo/CatecismoMenordeWestminster.pdf')}>
 
@@ -110,6 +113,7 @@ const Creemos = () => {
 										Confesión <br /> de Fé De Westminster
 									</h2>
 									<strong>Leer ↗</strong>
+								</div>
 								</div>
 							</div>
 						)}

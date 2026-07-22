@@ -13,8 +13,8 @@
 }
 
 .galeria p{
-    font-family: "Gruppo", sans-serif;
-    font-size: 1.5em;
+    font-family: sans-serif;
+    font-size: 1.2em;
     text-align: justify;
 }
 
@@ -174,102 +174,141 @@
     font-size: 1rem;
     line-height: 1.7;
 }
+@media (max-width: 992px){
 
-@media (max-width: 1000px) {
-    .contenedor-galeria {
-        flex-direction: column;
+    .galeria{
+        padding:60px 30px;
     }
 
-    .menu-ministries {
-        width: 100%;
-        border-radius: 32px 32px 0 0;
+    .galeria h1{
+        font-size:2.4rem;
+        text-align:center;
+        display:block;
     }
 
-    .gallery-display {
-        padding: 24px;
+    .galeria>p{
+        text-align:center;
     }
+
+    .cont{
+        flex-direction:column;
+        gap:20px !important;
+    }
+
+    .galeria-imagen{
+        width:100%;
+        max-width:100%;
+        height:400px;
+    }
+
+    .gallery-info{
+        width:100%;
+        height:auto;
+        margin-top:0;
+    }
+
+    .nav-button{
+        width:45px;
+        height:45px;
+        font-size:1.5rem;
+    }
+
 }
 
-@media (max-width: 720px) {
-    .galeria h1 {
-        font-size: 2.4rem;
-        padding: 14px 22px;
+/* ==========================
+        CELULARES
+========================== */
+
+@media (max-width:768px){
+
+    .galeria{
+        padding:40px 20px;
     }
 
-    .tarjeta-galeria {
-        border-radius: 24px;
+    .galeria h1{
+        font-size:2rem;
+        line-height:1.3;
     }
 
-    .menu-ministries {
-        padding: 22px 16px;
+    .galeria p{
+        font-size:1rem;
+        text-align:justify;
     }
 
-    .menu-item {
-        padding: 12px 14px;
-        font-size: 0.96rem;
+    .gallery-display{
+        padding:0;
     }
 
-    .image-frame,
-    .empty-slide {
-        min-height: 300px;
+    .image-frame{
+        background:none;
+        min-height:auto;
     }
 
-    .nav-button {
-        width: 42px;
-        height: 42px;
-        font-size: 1.5rem;
+    .cont{
+        flex-direction:column;
+        gap:15px !important;
     }
 
-    .gallery-info {
-        padding: 16px 18px;
-        min-height: auto;
+    .galeria-imagen{
+        width:100%;
+        height:280px;
+        border-radius:15px;
     }
+
+    .gallery-info{
+        width:100%;
+        height:auto;
+        padding:18px;
+        border-radius:15px;
+    }
+
+    .gallery-info p{
+        font-size:.95rem;
+    }
+
+    .nav-button{
+        width:42px;
+        height:42px;
+        font-size:1.2rem;
+    }
+
 }
 
-@media (max-width: 480px) {
-    .galeria h1 {
-        font-size: 2rem;
-        padding: 10px 14px;
+/* ==========================
+    CELULARES PEQUEÑOS
+========================== */
+
+@media (max-width:480px){
+
+    .galeria{
+        padding:30px 15px;
     }
 
-    .contenedor-galeria {
-        flex-direction: column;
-        gap: 18px;
+    .galeria h1{
+        font-size:1.6rem;
     }
 
-    .menu-ministries {
-        width: 100%;
-        padding: 18px 14px;
-        border-radius: 24px 24px 0 0;
+    .galeria p{
+        font-size:.95rem;
     }
 
-    .menu-item {
-        padding: 10px 12px;
-        font-size: 0.92rem;
+    .galeria-imagen{
+        width:100%;
+        height:220px;
     }
 
-    .gallery-display {
-        padding: 18px 14px;
+    .gallery-info{
+        padding:15px;
     }
 
-    .image-frame,
-    .empty-slide {
-        min-height: 220px;
+    .gallery-info p{
+        font-size:.9rem;
     }
 
-    .nav-button {
-        width: 38px;
-        height: 38px;
-        font-size: 1.3rem;
+    .nav-button{
+        width:38px;
+        height:38px;
+        font-size:1rem;
     }
 
-    .gallery-info {
-        padding: 14px 16px;
-    }
-
-    .galeria-imagen {
-        height: auto;
-    }
 }
-
-

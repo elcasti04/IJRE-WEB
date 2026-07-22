@@ -11,6 +11,7 @@ const Inicio = () => {
 				<h1 className="inicio-titulo">
 					Iglesia Evangelica <br /> Jesucristo Rey Eterno
 				</h1>
+				
 				<h3 className='siglas'>IEJRE - IREP</h3>
 
 				<br />

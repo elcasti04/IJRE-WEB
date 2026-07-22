@@ -51,12 +51,10 @@ const Nosotros = () => {
 			</div>
 			<div className='footer col d-flex flex-wrap '>
 					<div className='ubi col-12 col-lg-6'>
-							<img
-								src="../../iconos/icons8-location.gif"
-								alt="icono de ubicacion"
-							/>
+						<p>🚩</p>
 							<p>San Pedro Sucre (Colombia) {' '}
 							<span className='text-decoration-underline'
+							style={{cursor:'pointer'}}
 							onClick={() => window.open('https://maps.app.goo.gl/2rr1qbBptamywnvYA')}>ver mapa ↗</span>
 							</p>
 					</div>

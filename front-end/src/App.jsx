@@ -4,7 +4,7 @@ import './App.css';
 import { Routes, Route } from 'react-router-dom';
 
 import Inicio from './pages/Inicio';
-import Info from './pages/Info';
+// import Info from './pages/Info';
 import Videos from './pages/Videos';
 import Nosotros from './pages/Nosotros';
 import Lideres from './pages/Lideres';
@@ -20,6 +20,8 @@ import Ministerios from './pages/ministerios';
 import Academia from './pages/Academia';
 import Footer from './pages/footer';
 import Historia from './pages/historia';
+import Comunidad from './pages/comunidad';
+// import ScrollToTop from './scrollToTop';
 
 function Home() {
 	return (
@@ -34,8 +36,8 @@ function Home() {
 		<section id='Creemos'>
 			<Creemos />
 		</section>
-		<section id='Galeria'>
-			<Galeria />
+		<section id='Comunidad'>
+			<Comunidad />
 		</section>
 		<section id='Videos'>
 			<Videos />
@@ -64,6 +66,8 @@ function Home() {
 
 function App() {
 	return (
+		<>
+		{/* <ScrollToTop /> */}
 		<Routes>
 			<Route path="/login" element={<Login />} />
 			<Route path="/*" element={<Home />} />
@@ -79,9 +83,8 @@ function App() {
 			<Route path="/Admin" element={<Admin />} />
 			<Route path="/Admin" element={<Admin />} />
 			<Route path="/Historia" element={<Historia />} />
-			
-			
 		</Routes>
+		</>
 	);
 }
 

@@ -1,7 +1,8 @@
 .head {
+	display: flex;
 	font-family: Georgia;
-	height: 6em;
 	justify-content: space-around;
+	align-items: center;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -10,6 +11,7 @@
 	box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 	transition: transform 1s ease, opacity 1.5s ease;
 	z-index: 1000;
+	text-align: center;
 }
 .navbar-links a {
     color: white;
@@ -42,15 +44,14 @@
 
 .titulo{
 	font-family: Times New Roman, Times, serif;
-	font-size: 1.8em;
-	padding: 2px;
+	font-size: 1.5em;
 	color: #01069b;
 	text-decoration: none;
 }
 .logo { 
 	cursor: pointer;
 	border-radius: 50%;
-	width: 100px;
+	width: 90px;
 	
 }
 
@@ -99,6 +100,9 @@
 	.navbar-links b {
 		font-size: 1.1rem;
 	}
+	.logo{
+		width: 60px;
+	}
 }
 
 /* Móviles */
@@ -116,5 +120,8 @@
 	.navbar-links li,
 	.navbar-links b {
 		font-size: 0.95rem;
+	}
+	.logo{
+		width: 50px;
 	}
 }

@@ -27,18 +27,6 @@ const Videos = () => {
 			autor: 'Pastor Marco Orozco',
 			codigo: 'eKWy63p_ceU?si'
 		},
-		{
-			id: 5,
-			titulo: ' Liturgia Cristiana #1',
-			autor: 'Pastor Marco Orozco',
-			codigo: 'eKWy63p_ceU?si'
-		},
-		{
-			id: 6,
-			titulo: ' Liturgia Cristiana #1',
-			autor: 'Pastor Marco Orozco',
-			codigo: 'eKWy63p_ceU?si'
-		},
 	];
 
 	return (
@@ -48,7 +36,7 @@ const Videos = () => {
 					<h1>La Palabra que transforma</h1>
 
 					<p>
-						<i>
+						
 							Escucha nuestros mensajes y crece en el conocimiento de Cristo.
 							Nuevas predicaciones cada semana en nuestro canal de{" "}
 							<a
@@ -58,21 +46,14 @@ const Videos = () => {
 							>
 								YouTube
 							</a>.
-						</i>
+						
 					</p>
 
 					<div className="contenedor-predicas d-flex flex-wrap justify-content-around">
 
 						{videos.map((video) => (
 							<div className="p-2" key={video.id}>
-								<div
-									style={{
-										borderBottom: "5px solid black",
-										width: "250px",
-										borderRadius: "12px",
-										overflow: "hidden"
-									}}
-								>
+								<div>
 
 									<iframe
 										style={{ borderRadius: "12px 12px 0 0" }}
@@ -86,7 +67,7 @@ const Videos = () => {
 										allowFullScreen
 									/>
 
-									<h3 className="text-white p-2">Canción</h3>
+									<h3 className="text-white p-2">Predica</h3>
 
 									<div className="p-2">
 										<i>{video.titulo.toUpperCase()}</i>

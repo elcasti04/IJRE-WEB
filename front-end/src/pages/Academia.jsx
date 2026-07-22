@@ -1,6 +1,4 @@
 import './style/academia.css'
-import { useState, useEffect } from 'react'
-
 
 function Academia () {
         
@@ -14,79 +12,38 @@ function Academia () {
         },
         descripcion : `Somos una familia que ama la Palabra de Dios Somos una congregación reformada en San Pedro, Sucre. Creemos que la Biblia es la autoridad suprema para la fe y la vida, y queremos que cada persona que llegue encuentre un hogar espiritual.`
     }
-
-    const [imagenA, setImagenA] = useState(seminario.fotoEstudiantes.f1)
-
-    useEffect(() => {
-        const intervalo = setInterval(() => {
-            setImagenA((prev) => 
-            prev === seminario.fotoEstudiantes.f1
-            ? seminario.fotoEstudiantes.f2
-            : seminario.fotoEstudiantes.f1)
-        }, 3000)
-        return () => clearInterval(intervalo)
-    }, [seminario])
     
     return (
         <>
-        <main className="academia container">
+        <main className="academia container col">
             <h1>Preparacion para la gran Comisión</h1>
             <p>
                 <i>
                     Por tanto, id, y haced discípulos a todas las naciones, bautizándolos en el nombre del Padre, y del Hijo, y del Espíritu Santo
                 </i>
             </p>
+            <br />
+            <div className='logo-seminario d-flex justify-content-center'>
+                <img className='col-5 rounded-5' src={seminario.logo} alt="" />
+            </div>
+            <br />
+            <hr />
 
-            
-
-            <div className="contenedor row g-4">
-
-    <div className="col-lg-5">
-        <div className="card-seminario rector">
-            <h3>Rector</h3>
-
-            <img
-                src={seminario.ftRector}
-                alt="Foto del rector"
-            />
-
-            <h5>{seminario.rector}</h5>
-        </div>
-    </div>
-
-    <div className="col-lg-7">
-        <div className="card-seminario logo-seminario">
-            <img
-                src={seminario.logo}
-                alt="Logo del seminario"
-            />
-        </div>
-    </div>
-
-    <div className="col-lg-7">
-        <div className="card-seminario descripcion">
-            <h3>Descripción</h3>
+            <p className='col-12'><strong>El Seminario Reformado Gracia sobre Gracia</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi omnis ex, porro sapiente laudantium minima. Dicta dignissimos accusantium nam, deserunt reprehenderit laborum, repudiandae illo corporis, deleniti repellendus id autem incidunt.</p>
+            <div className='d-flex justify-content-center align-items-center'>
+            <p className='col-6'>Lorem ipsum dolor <strong>Rector: {seminario.rector}</strong> adipisicing elit. Cumque optio quisquam iure rerum, exercitationem, totam obcaecati maxime facere tempora a eum recusandae dolorem labore, laboriosam modi. Vero eligendi alias quo?</p>
+            <img className='rector col-4' src={seminario.ftRector} alt="" />
+            </div>
 
             <p>{seminario.descripcion}</p>
-        </div>
-    </div>
-
-    <div className="col-lg-5">
-        <div className="card-seminario estudiantes">
-            <h3>Estudiantes</h3>
-
-            <div className="galeria-estudiantes">
-                <img
-                    src={imagenA}
-                    alt="Estudiante 1"
-                />
-
-                
+            <div className='d-flex justify-content-around'>
+                <img className='estudiantes col-5' src={seminario.fotoEstudiantes.f1} alt="" />
+                <img className='estudiantes col-5' src={seminario.fotoEstudiantes.f2} alt="" />
             </div>
-        </div>
-    </div>
-
-</div>
+            <br />
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur nesciunt accusamus repudiandae atque sed officia nam maiores exercitationem ipsum praesentium sunt modi, nisi velit. Sequi, unde voluptatibus. Odit, quos sed!
+            </p>
         </main>
         </>
     )

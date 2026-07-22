@@ -1,129 +1,200 @@
-import axios from 'axios';
-import { useEffect, useState } from 'react';
-import './style/lideres.css'
+import axios from "axios";
+import { useEffect, useState } from "react";
+import "./style/lideres.css";
+
+const API_URL = "http://localhost:3000";
 
 const Lideres = () => {
-	const [lideres, setLideres] = useState([]);
-	const [loading, setLoading] = useState(true);
-	const [error, setError] = useState(null);
-	const [infoLider, setInfoLider] = useState(null)
+    const [lideres, setLideres] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState("");
+    const [liderSeleccionado, setLiderSeleccionado] = useState(null);
 
+    useEffect(() => {
+        obtenerLideres();
+    }, []);
 
-	const API_URL = 'http://localhost:3000/'
+    useEffect(() => {
+        if (liderSeleccionado) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "auto";
+        }
 
-	useEffect(() => {
-		axios
-			.get('http://localhost:3000/lideres')
-			.then((response) => {
-				setLideres(
-					Array.isArray(response.data)
-						? response.data
-						: response.data.liders || [],
-				);
-				setLoading(false);
-			})
-			.catch((error) => {
-				setError(error.message);
-				setLoading(false);
-			});
-	}, []);
+        return () => {
+            document.body.style.overflow = "auto";
+        };
+    }, [liderSeleccionado]);
 
-	if (loading)
-		return (
-			<img style={{display:'flex', textAlign: 'center', padding: '2rem' }} src="../../public/iconos/icons8-load.gif" alt="icono de carga" />
-		);
-	if (error)
-		return (
-			<p
-				style={{
-					textAlign: 'center',
-					padding: '2rem',
-					color: 'var(--accent-color)',
-				}}
-			>
-				Error: {error}
-			</p>
-		);
+    const obtenerLideres = async () => {
+        try {
+            const { data } = await axios.get(`${API_URL}/lideres`);
 
-	return (
-		<>
-		<main className='lideres container'>
-			<div className="">
-			<h1 className=''>Personas que sirven con amor</h1>
-			<p>
-				<i>
-					Nuestra iglesia es pastoreada por hombres comprometidos con el evangelio y el bienestar de la congregación.
-				</i>
-			</p>
-			<br /><br />
-			{lideres.length === 0 ? (
-				<p >
-					<h2 className='text-danger'>⚠</h2> No hay líderes disponibles en este momento.
-				</p>
-			) : (
-				<div>
-					<div className="contenedor  d-flex col justify-content-between ">
-						
-							
+            setLideres(
+                Array.isArray(data)
+                    ? data
+                    : data.liders || []
+            );
+        } catch (err) {
+            setError(err.message);
+        } finally {
+            setLoading(false);
+        }
+    };
 
-							<div className="demas d-flex p-2 position-relative col">
-								<div className='d-flex flex-wrap justify-content-between gap-5 col-12 '>
-								{lideres.map((lider) => (
-									<div className="liderD p-3 " key={lider.nombre}>
-										<img src={`http://localhost:3000${lider.image}`} alt={lider.nombre} />
-										<hr />
-										<h5 className='cargo'>{lider.cargo}</h5>
-										<h5>{lider.nombre}</h5>
-										<p onClick={() => setInfoLider(lider.id)} 
-										className='bg'>Ver mas</p>
+    if (loading) {
+        return (
+            <section className="lideres">
+                <div className="loading">
+                    <img
+                        src="../../public/iconos/icons8-load.gif"
+                        alt="Cargando..."
+                    />
+                </div>
+            </section>
+        );
+    }
 
+    if (error) {
+        return (
+            <section className="lideres">
+                <div className="error">
+                    <h3>⚠ Ocurrió un error</h3>
+                    <p>{error}</p>
+                </div>
+            </section>
+        );
+    }
 
-										{infoLider === lider.id && (
-											<div  style={{
-												position: 'fixed',
-												top: 0,
-												left: 0,
-												width: '100%',
-												height: '100%',
-												background: 'rgba(20,32,58,1)',
-												display: 'flex',
-												justifyContent: 'center',
-												alignItems: 'center',
-												zIndex: '1001',
-												borderRadius: '12px',
-												padding: '4em',
-											}}>
-												<div className='tarjeta-lider bg-white p-3' >
-													<header onClick={(e) => { e.stopPropagation();
-											setInfoLider(null)}} className='x text-black'>
-												<strong>
-													X
-												</strong>
-												</header>
-													<div className='text'>
-													<img src={`http://localhost:3000${lider.image}`} alt="" />
-													<h5 style={{borderBottom:'1px solid black', width:'50%', top:'10px'}}>{lider.nombre}</h5>
-													<h6>{lider.cargo}</h6>
-													<p>{lider.info}</p>
-													</div>
-												</div>
-											</div>
-										)}
-									</div>	
-									))}
-								</div>
-							</div>
-						</div>
-				</div>
-			)}
-			
-		</div>
-		
-		</main>
-		</>
+    return (
+        <>
+            <section className="lideres">
 
-							
-	);
+                <div className="titulo-lideres">
+
+                    <h1>
+                        Personas que sirven con amor
+                    </h1>
+
+                    <p>
+                        Dios ha levantado hombres y mujeres comprometidos con
+                        Su obra para pastorear, enseñar y acompañar a nuestra
+                        congregación. Conoce a quienes dedican su vida a servir
+                        con humildad y amor.
+                    </p>
+
+                </div>
+
+                {lideres.length === 0 ? (
+
+                    <div className="sin-lideres">
+                        <h2>⚠</h2>
+                        <p>No hay líderes registrados por el momento.</p>
+                    </div>
+
+                ) : (
+
+                    <div className="grid-lideres">
+
+                        {lideres.map((lider) => (
+
+                            <article
+                                className="card-lider"
+                                key={lider.id}
+                            >
+
+                                <div className="foto-lider">
+
+                                    <img
+                                        src={`${API_URL}${lider.image}`}
+                                        alt={lider.nombre}
+                                    />
+
+                                </div>
+
+                                <div className="contenido-lider">
+
+                                    <span className="cargo">
+                                        {lider.cargo}
+                                    </span>
+
+                                    <h3>
+                                        {lider.nombre}
+                                    </h3>
+
+                                    <button
+                                        className="btn-lider"
+                                        onClick={() =>
+                                            setLiderSeleccionado(lider)
+                                        }
+                                    >
+                                        Conocer más
+                                    </button>
+
+                                </div>
+
+                            </article>
+
+                        ))}
+
+                    </div>
+
+                )}
+
+            </section>
+
+            {liderSeleccionado && (
+
+                <div
+                    className="overlay"
+                    onClick={() => setLiderSeleccionado(null)}
+                >
+
+                    <div
+                        className="modal-lider"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+
+                        <button
+                            className="cerrar"
+                            onClick={() => setLiderSeleccionado(null)}
+                        >
+                            ✕
+                        </button>
+
+                        <div className="modal-imagen">
+
+                            <img
+                                src={`${API_URL}${liderSeleccionado.image}`}
+                                alt={liderSeleccionado.nombre}
+                            />
+
+                        </div>
+
+                        <div className="modal-contenido">
+
+                            <span className="cargo">
+                                {liderSeleccionado.cargo}
+                            </span>
+
+                            <h2>
+                                {liderSeleccionado.nombre}
+                            </h2>
+
+                            <p>
+                                {liderSeleccionado.info}
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            )}
+
+        </>
+    );
 };
 
 export default Lideres;

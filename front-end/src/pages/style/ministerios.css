@@ -6,98 +6,218 @@
     width: 100%;
 }
 
-.ministerios h1 {  
-    color:#01069b;
+.ministerios h1 {
+    color: #000000;
     font-size: 3em;
 }
 
 .ministerios p {
-    font-family: "Gruppo", sans-serif;
-    font-size: 1.5em;
+    font-family: sans-serif;
+    font-size: 1.3em;
     text-align: justify;
 }
 
+/* ========================= */
+/* MENÚ */
+/* ========================= */
+
 .list-ministerios {
     background-color: #01069b;
+    border-radius: 12px;
+    padding: 10px;
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
 }
 
+.list-ministerios p {
+    color: white;
+    margin: 0;
+    cursor: pointer;
+    text-align: center;
+    padding: 10px 15px;
+    transition: .3s;
+}
+
+.list-ministerios p:hover {
+    color: #ffd700;
+}
+
+/* ========================= */
+/* TARJETAS */
+/* ========================= */
+
 .info-card {
-    padding: 1rem;
+    padding: 20px;
     overflow-y: auto;
     overflow-x: hidden;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
     word-break: break-word;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    border: 1px solid black;
+    gap: 15px;
+    border: 1px solid #d8d8d8;
     border-radius: 12px;
+    background: white;
+    box-shadow: 0 5px 20px rgba(0,0,0,.08);
+}
+
+.info-card h3 {
+    color: #01069b;
+    margin-bottom: 5px;
 }
 
 .info-card p {
-    margin-bottom: 0;
-    white-space: normal;
+    margin: 0;
 }
 
-@media (max-width: 768px) {
-
-    .ministerios {
-        padding-top: 40px;
-        padding-left: 15px;
-        padding-right: 15px;
-        font-size: 1rem;
-        min-height: auto;
-    }
-
-    .ministerios h1 {
-        font-size: 2rem;
-        text-align: center;
-    }
-
-    .ministerios p {
-        font-size: 1rem;
-    }
-
-    .list-ministerios {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .info-card {
-        width: 100%;
-        border-left: none;
-        border-top: 2px solid black;
-        border-radius: 12px;
-        margin-bottom: 15px;
-    }
+.row img {
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    object-fit: cover;
+    border-radius: 12px;
 }
 
-@media (max-width: 480px) {
+/* ========================= */
+/* TABLETS */
+/* ========================= */
 
-    .ministerios {
-        padding-top: 20px;
-        padding-left: 10px;
-        padding-right: 10px;
+@media (max-width:992px){
+
+    .ministerios{
+        padding:70px 40px;
     }
 
-    .ministerios h1 {
-        font-size: 1.7rem;
+    .ministerios h1{
+        font-size:2.4rem;
+        text-align:center;
     }
 
-    .ministerios p {
-        font-size: 0.95rem;
+    .ministerios>p{
+        width:100% !important;
+        text-align:center;
     }
 
-    .info-card {
-        padding: 12px;
+    .list-ministerios{
+        gap:20px;
     }
 
-    .info-card h3 {
-        font-size: 1.2rem;
+    .info-card{
+        width:100%;
     }
 
-    .info-card h5 {
-        font-size: 1rem;
+    .row img{
+        min-height:350px;
+        margin-top:20px;
     }
+
+}
+
+/* ========================= */
+/* CELULARES */
+/* ========================= */
+
+@media (max-width:768px){
+
+    .ministerios{
+        padding:60px 20px;
+    }
+
+    .ministerios h1{
+        font-size:2rem;
+        text-align:center;
+    }
+
+    .ministerios p{
+        font-size:1rem;
+        text-align:center;
+    }
+
+    .list-ministerios{
+        justify-content:flex-start;
+        flex-wrap:nowrap;
+        overflow-x:auto;
+        gap:10px;
+        padding:10px;
+        scrollbar-width:none;
+    }
+
+    .list-ministerios::-webkit-scrollbar{
+        display:none;
+    }
+
+    .list-ministerios p{
+        white-space:nowrap;
+        min-width:120px;
+        font-size:.95rem;
+    }
+
+    .info-card{
+        width:100%;
+        margin-bottom:15px;
+        padding:18px;
+    }
+
+    .info-card h3{
+        font-size:1.3rem;
+    }
+
+    .row{
+        gap:20px;
+    }
+
+    .row img{
+        min-height:280px;
+        margin-top:10px;
+    }
+
+}
+
+/* ========================= */
+/* MÓVILES PEQUEÑOS */
+/* ========================= */
+
+@media (max-width:480px){
+
+    .ministerios{
+        padding:50px 15px;
+    }
+
+    .ministerios h1{
+        font-size:1.7rem;
+    }
+
+    .ministerios p{
+        font-size:.95rem;
+    }
+
+    .list-ministerios{
+        padding:8px;
+        gap:8px;
+    }
+
+    .list-ministerios p{
+        font-size:.9rem;
+        min-width:100px;
+        padding:8px 12px;
+    }
+
+    .info-card{
+        padding:15px;
+    }
+
+    .info-card h3{
+        font-size:1.15rem;
+    }
+
+    .info-card p{
+        font-size:.95rem;
+    }
+
+    .row img{
+        min-height:220px;
+    }
+
 }

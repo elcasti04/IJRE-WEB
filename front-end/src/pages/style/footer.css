@@ -1,109 +1,204 @@
-.foot {
-    background: #060838;
-    color: #ffffff;
-    padding: 60px 0 60px;
-    font-family: "DM Serif Display", serif;
+.foot{
+    background:linear-gradient(135deg,#060838,#0a1170);
+    color:#fff;
+    padding:70px 0 25px;
+    font-family:"DM Serif Display",serif;
 }
 
-.footer-title {
-    color:rgb(255, 255, 255);
-    font-size: 2em;
-    font-weight: 700;
-    margin-bottom: 15px;
-    position: relative;
+.footer-title{
+    font-size:2rem;
+    color:#fff;
+    margin-bottom:15px;
 }
 
-.footer-title::after {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 3px;
-    background: #d4af37;
-    margin-top: 8px;
+.footer-title::after{
+    content:"";
+    display:block;
+    width:70px;
+    height:4px;
+    margin-top:8px;
+    background:#d4af37;
+    border-radius:10px;
 }
 
-.footer-subtitle {
-    color: #d4af37;
-    margin-bottom: 15px;
+.footer-subtitle{
+    color:#d4af37;
+    margin-bottom:20px;
+    letter-spacing:2px;
 }
 
-.foot p {
-    color: #cfcfcf;
-    line-height: 1.8;
+.foot p{
+    font-family:sans-serif;
+    color:#ddd;
+    line-height:1.8;
 }
 
-.social-icons {
-    display: flex;
-    gap: 15px;
-    margin-top: 20px;
+/* Redes */
+
+.social-icons{
+    display:flex;
+    gap:15px;
+    margin-top:25px;
 }
 
-.social-icons a {
-    width: 50px;
-    height: 50px;
-    background: #ffffff;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.3s ease;
+.social-icons a{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    background:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    transition:.3s;
 }
 
-.social-icons a:hover {
-    background: #d4af37;
-    transform: translateY(-5px);
+.social-icons a:hover{
+    background:#d4af37;
+    transform:translateY(-5px);
 }
 
-.social-icons img {
-    width: 24px;
-    height: 24px;
+.social-icons img{
+    width:24px;
+    height:24px;
 }
 
-.contact-list {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
+/* Contacto */
+
+.contact-list{
+    list-style:none;
+    padding:0;
+    margin:0;
 }
 
-.contact-list li {
-    margin-bottom: 15px;
-    color: #d9d9d9;
+.contact-list li{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:20px;
+    color:#ddd;
+    font-family:sans-serif;
 }
 
-.map-container {
-    overflow: hidden;
-    border-radius: 12px;
+.contact-icon{
+    width:48px;
+    height:48px;
+    min-width:48px;
+    background:#fff;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
-.map-container iframe {
-    width: 100%;
-    height: 300px;
-    border: 0;
+.contact-icon img{
+    width:22px;
+    height:22px;
 }
 
-.foot hr {
-    border-color: rgba(255, 255, 255, 0.1);
-    margin-top: 40px;
+/* Mapa */
+
+.map-container{
+    overflow:hidden;
+    border-radius:15px;
+    box-shadow:0 15px 35px rgba(0,0,0,.35);
 }
 
-.footer-bottom {
-    text-align: center;
-    color: #bdbdbd;
-    font-size: 0.9rem;
+.map-container iframe{
+    width:100%;
+    height:320px;
+    border:none;
 }
 
-/* Responsive */
+/* Línea */
+
+.foot hr{
+    border-color:rgba(255,255,255,.15);
+    margin:45px 0 20px;
+}
+
+/* Footer */
+
+.footer-bottom{
+    text-align:center;
+    color:#d4d4d4;
+    font-family:sans-serif;
+}
+
+/* Tablet */
+
+@media (max-width: 992px) {
+
+    .foot{
+        text-align:center;
+    }
+
+    .footer-title::after{
+        margin:10px auto;
+    }
+
+    .social-icons{
+        justify-content:center;
+    }
+
+    .contact-list li{
+        justify-content:center;
+        text-align:left;
+    }
+
+}
+
+/* Celular */
+
 @media (max-width: 768px) {
-    .foot {
-        text-align: center;
+
+    .foot{
+        padding:50px 20px;
     }
 
-    .footer-title::after {
-        margin: 10px auto 0;
+    .footer-title{
+        font-size:1.7rem;
     }
 
-    .social-icons {
-        justify-content: center;
+    .map-container iframe{
+        height:250px;
     }
+
+}
+
+/* Celulares pequeños */
+
+@media (max-width: 576px) {
+
+    .footer-title{
+        font-size:1.5rem;
+    }
+
+    .social-icons{
+        flex-wrap:wrap;
+    }
+
+    .social-icons a{
+        width:45px;
+        height:45px;
+    }
+
+    .contact-list li{
+        align-items:flex-start;
+    }
+
+    .contact-icon{
+        width:42px;
+        height:42px;
+        min-width:42px;
+    }
+
+    .contact-icon img{
+        width:18px;
+        height:18px;
+    }
+
+    .map-container iframe{
+        height:220px;
+    }
+
 }

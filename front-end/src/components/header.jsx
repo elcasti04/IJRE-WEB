@@ -10,12 +10,25 @@ function Header() {
 	const closeMenu = () => setMenu(false);
 
 	useEffect(() => {
-		const handleScroll = () => setShowHeader(window.scrollY > 0);
-		window.addEventListener('scroll', handleScroll);
-		handleScroll();
-		return () => window.removeEventListener('scroll', handleScroll);
-	}, []);
+    const handleScroll = () => {
+        const debeMostrarse = window.scrollY > 20;
 
+        setShowHeader((estadoAnterior) => {
+            if (estadoAnterior !== debeMostrarse) {
+                return debeMostrarse;
+            }
+            return estadoAnterior;
+        });
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    handleScroll();
+
+    return () => {
+        window.removeEventListener("scroll", handleScroll);
+    };
+	}, []);
 	useEffect(() => {
 		document.body.style.paddingTop = showHeader ? '100px' : '0';
 		return () => {
@@ -25,16 +38,16 @@ function Header() {
 
 	return (
 		<>
-			<header className={`head col d-flex text-center align-items-center ${showHeader ? 'head-visible' : 'head-hidden'}`}>
+			<header className={`head ${showHeader ? 'head-visible' : 'head-hidden'}`}>
 				<img
-					className='logo col-3 col-md-3 col-lg-2'
+					className='logo'
 					onClick={() => setExpandido(true)}
 					src="public/img/Logo.jpeg"
 					alt="Logo de la iglesia"
 				/>
-				<h2 className=' col-6 col-md-6 col-lg-9'><a className='titulo' href="#Inicio">Iglesia Evangelica Jesucristo Rey Eterno</a></h2>
+				<h2 className=' col-6 '><a className='titulo' href="#Inicio">Iglesia Evangelica Jesucristo Rey Eterno</a></h2>
 				
-				<div className='menu-btn col-1 col-md-2 col-lg-2'
+				<div className='menu-btn '
 					onClick={() => menu ? setMenu(false) : setMenu(true)}>
 					<img src="public/iconos/menu.png" alt="boton-toogle" />
 				</div>
@@ -110,7 +123,7 @@ function Header() {
 										<Link to="login" onClick={closeMenu}>
 											🔴 Login
 										</Link>
-										<p style={{fontSize:'15px'}}>persola Autorizado</p>
+										<p style={{fontSize:'15px'}}>personal Autorizado</p>
 										</li>
 									</ul>
 				</div>
@@ -119,6 +132,7 @@ function Header() {
 				<div
 					onClick={() => setExpandido(false)}
 					style={{
+						flexDirection: 'column',
 						position: 'fixed',
 						top: 0,
 						left: 0,
@@ -129,9 +143,12 @@ function Header() {
 						display: 'flex',
 						justifyContent: 'center',
 						alignItems: 'center',
-						zIndex: '1001'
+						zIndex: '1001',
+						textAlign:'center',
 					}}
 				>
+					<h4 style={{color:'white'}}>Presione cualquier lugar para cerrar</h4>
+
 					<img
 						style={{
 							width: '600px',

@@ -150,158 +150,252 @@ const Admin = () => {
 		navigate('/login');
 	};
 
-	return (
-		<div className='admin'>
-			
+return (
+    <div className="admin">
 
-			<div className='heade d-flex justify-content-around'>
-				<h1>Panel de Administración</h1>
-				<button onClick={handleLogout}>Cerrar sesión</button>
-			</div>
+        <header className="admin-header">
 
-			{/* <div className='INFORMACION'>
-							
-			 ===== INFO ===== 
-			<h2>Información</h2>
-			<ul>
-				{infos.map((info) => (
-					<li key={info.id}>
-						<strong>{info.title}</strong> - {info.info}
-						<button onClick={() => handleDeleteInfo(info.id)}>Eliminar</button>
-					</li>
-				))}
-			</ul>
+            <div>
+                <h1>Panel de Administración</h1>
+                <p>Gestiona los líderes y la galería de la iglesia.</p>
+            </div>
 
-			<input
-				placeholder="Título"
-				value={newInfo.title}
-				onChange={(e) => setNewInfo({ ...newInfo, title: e.target.value })}
-			/>
-			<textarea
-				placeholder="Info"
-				value={newInfo.info}
-				onChange={(e) => setNewInfo({ ...newInfo, info: e.target.value })}
-			/>
-			<button onClick={handleAddInfo}>Agregar Info</button>
-			</div>
+            <button className="logout-btn" onClick={handleLogout}>
+                Cerrar sesión
+            </button>
 
-			<hr /> */}
+        </header>
 
 
-			<div className='LIDERES col d-flex'>
-				{/* Lider */}
+        {/* ================= LIDERES ================= */}
 
-			<div className='Añadir-Lider col-5'>
-					<h2>Añadir Lider</h2>
+        <section className="admin-grid">
 
-			<input
-				placeholder="Nombre"
-				value={newLider.nombre}
-				onChange={(e) => setNewLider({ ...newLider, nombre: e.target.value })}
-			/>
-			<input
-				placeholder="Cargo"
-				value={newLider.cargo}
-				onChange={(e) => setNewLider({ ...newLider, cargo: e.target.value })}
-			/>
-			<textarea
-				placeholder="Información del líder"
-				value={newLider.info}
-				onChange={(e) => setNewLider({ ...newLider, info: e.target.value })}
-			/>
+            {/* Agregar líder */}
 
-			<input
-				type="file"
-				accept="image/*"
-				onChange={(e) => setNewLider({ ...newLider, image: e.target.files[0] })}
-			/>
+            <div className="card-admin">
 
-			<button onClick={handleAddLider}>Agregar Líder</button>
-			</div>
+                <h2>Añadir Líder</h2>
 
-			
+                <div className="form-admin">
 
-			<div className='ver-lideres col-5'>
-							{/* ===== LÍDERES ===== */}
-			<h2>Líderes</h2>
-			<ul>
-				{lideres.map((lider) => (
-					<li key={lider.id}>
-						<strong>{lider.nombre}</strong> - {lider.cargo}
-						<br />
-						{lider.image && (
-							<img
-								src={`http://localhost:3000${lider.image}`}
-								alt={lider.nombre}
-								width="100"
-							/>
-						)}
-						<br />
-						<button onClick={() => handleDeleteLider(lider.id)}>
-							Eliminar
-						</button>
-					</li>
-				))}
-			</ul>
-			</div>
+                    <input
+                        placeholder="Nombre"
+                        value={newLider.nombre}
+                        onChange={(e) =>
+                            setNewLider({
+                                ...newLider,
+                                nombre: e.target.value,
+                            })
+                        }
+                    />
 
-			<hr />
+                    <input
+                        placeholder="Cargo"
+                        value={newLider.cargo}
+                        onChange={(e) =>
+                            setNewLider({
+                                ...newLider,
+                                cargo: e.target.value,
+                            })
+                        }
+                    />
 
-			
-			</div>
+                    <textarea
+                        placeholder="Información del líder"
+                        value={newLider.info}
+                        onChange={(e) =>
+                            setNewLider({
+                                ...newLider,
+                                info: e.target.value,
+                            })
+                        }
+                    />
 
+                    <input
+                        type="file"
+                        accept="image/*"
+                        onChange={(e) =>
+                            setNewLider({
+                                ...newLider,
+                                image: e.target.files[0],
+                            })
+                        }
+                    />
 
-			<hr />
+                    <button
+                        className="btn-primary"
+                        onClick={handleAddLider}
+                    >
+                        Agregar líder
+                    </button>
 
-			
-			<div className='GALERIA'>
-				<h2>Añadir foto a Galeria</h2>
-				<select name="minis" id="minis"
-					value={imagen.ministerio}
-					onChange={(e) => setImagen({ ...imagen, ministerio: e.target.value})}>
-					<option value={null}>Seleccione un ministerio</option>
-					<option value="Damas">Damas</option>
-					<option value="Caballeros">Caballeros</option>
-					<option value="Jovenes">Jovenes</option>
-					<option value="Niños">Niños</option>
-					
-				</select>	
+                </div>
 
-				<input type="text" 
-					placeholder='informacion relevante'
-					value={imagen.info}
-					onChange={(e) => setImagen({ ...imagen, info: e.target.value})}/>
-
-				<input
-				type="file"
-				accept="image/*"
-				onChange={(e) => setImagen({ ...imagen, image: e.target.files[0] })}
-			/>
+            </div>
 
 
-				<button onClick={handleAddFoto}>Agregar Imagen</button>
+            {/* Lista de líderes */}
 
-			<h2>Fotos</h2>
-			{galeria.map((fotos) => (
-				<ul key={fotos.id}>
-					<li>
-						<h5>{fotos.ministerio}</h5>
-						<img src={fotos.image} alt="" />
-						<p>{fotos.info}</p>
-						<button onClick={() => handleDeleteFoto(fotos.id)}>Eliminar</button>
-					</li>
-				</ul>
-			))}
-			</div>
+            <div className="card-admin">
 
-<br />
-<hr />
-<br />
+                <h2>Líderes registrados</h2>
 
-			
+                <div className="lista-lideres">
 
-		</div>
-	);
+                    {lideres.map((lider) => (
+
+                        <div
+                            className="lider-item"
+                            key={lider.id}
+                        >
+
+                            <img
+                                src={`http://localhost:3000${lider.image}`}
+                                alt={lider.nombre}
+                            />
+
+                            <div>
+
+                                <h4>{lider.nombre}</h4>
+
+                                <p>{lider.cargo}</p>
+
+                            </div>
+
+                            <button
+                                className="btn-danger"
+                                onClick={() =>
+                                    handleDeleteLider(lider.id)
+                                }
+                            >
+                                Eliminar
+                            </button>
+
+                        </div>
+
+                    ))}
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        {/* ================= GALERIA ================= */}
+
+        <section className="card-admin galeria-admin">
+
+            <h2>Galería</h2>
+
+            <div className="form-admin">
+
+                <select
+                    value={imagen.ministerio}
+                    onChange={(e) =>
+                        setImagen({
+                            ...imagen,
+                            ministerio: e.target.value,
+                        })
+                    }
+                >
+                    <option value="">
+                        Seleccione un ministerio
+                    </option>
+
+                    <option value="Damas">
+                        Damas
+                    </option>
+
+                    <option value="Caballeros">
+                        Caballeros
+                    </option>
+
+                    <option value="Jovenes">
+                        Jóvenes
+                    </option>
+
+                    <option value="Niños">
+                        Niños
+                    </option>
+
+                </select>
+
+                <input
+                    type="text"
+                    placeholder="Información"
+                    value={imagen.info}
+                    onChange={(e) =>
+                        setImagen({
+                            ...imagen,
+                            info: e.target.value,
+                        })
+                    }
+                />
+
+                <input
+                    type="file"
+                    accept="image/*"
+                    onChange={(e) =>
+                        setImagen({
+                            ...imagen,
+                            image: e.target.files[0],
+                        })
+                    }
+                />
+
+                <button
+                    className="btn-primary"
+                    onClick={handleAddFoto}
+                >
+                    Agregar imagen
+                </button>
+
+            </div>
+
+            <div className="galeria-grid">
+
+                {galeria.map((foto) => (
+
+                    <div
+                        className="foto-card"
+                        key={foto.id}
+                    >
+
+                        <img
+                            src={`http://localhost:3000${foto.image}`}
+                            alt=""
+                        />
+
+                        <h5>
+                            {foto.ministerio}
+                        </h5>
+
+                        <p>
+                            {foto.info}
+                        </p>
+
+                        <button
+                            className="btn-danger"
+                            onClick={() =>
+                                handleDeleteFoto(foto.id)
+                            }
+                        >
+                            Eliminar
+                        </button>
+
+                    </div>
+
+                ))}
+
+            </div>
+
+        </section>
+
+    </div>
+);
 };
 
 export default Admin;
