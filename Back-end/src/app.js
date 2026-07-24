@@ -25,7 +25,7 @@ app.use(
 
 app.use(
 	cors({
-		origin: 'https://ijre-kjl3djlhw-andres-arturos-projects.vercel.app/', 
+		origin: 'https://ijre-kjl3djlhw-andres-arturos-projects.vercel.app', 
 		credentials: true,
 	}),
 );
