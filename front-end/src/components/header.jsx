@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import '../pages/style/header.css'
 
 
@@ -8,6 +8,7 @@ function Header() {
 	const [menu, setMenu] = useState(false);
 	const [showHeader, setShowHeader] = useState(false);
 	const closeMenu = () => setMenu(false);
+	const navigate = useNavigate()
 
 	useEffect(() => {
     const handleScroll = () => {
@@ -42,14 +43,14 @@ function Header() {
 				<img
 					className='logo'
 					onClick={() => setExpandido(true)}
-					src="public/img/Logo.jpeg"
+					src="img/logo.jpeg"
 					alt="Logo de la iglesia"
 				/>
 				<h2 className=' col-6 '><a className='titulo' href="#Inicio">Iglesia Evangelica Jesucristo Rey Eterno</a></h2>
 				
 				<div className='menu-btn '
 					onClick={() => menu ? setMenu(false) : setMenu(true)}>
-					<img src="public/iconos/menu.png" alt="boton-toogle" />
+					<img src="iconos/menu.png" alt="boton-toogle" />
 				</div>
 			</header>
 
@@ -120,9 +121,9 @@ function Header() {
 										
 										<hr />
 										<li style={{ fontSize: '20px' }}>
-										<Link to="login" onClick={closeMenu}>
+										<h4 onClick={() => navigate('/Login')}>
 											🔴 Login
-										</Link>
+										</h4>
 										<p style={{fontSize:'15px'}}>personal Autorizado</p>
 										</li>
 									</ul>
@@ -154,7 +155,7 @@ function Header() {
 							width: '600px',
 							maxWidth: '90%'
 						}}
-						src="public/img/Logo2.jpeg"
+						src="img/Logo2.jpeg"
 						alt="Logo de la iglesia"
 					/>
 				</div>

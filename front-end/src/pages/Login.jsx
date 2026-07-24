@@ -9,11 +9,12 @@ const Login = () => {
 	const [password, setPassword] = useState('');
 	const [message, setMessage] = useState('');
 	const navigate = useNavigate();
+	const API_URL = import.meta.env.VITE_API_URL
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		try {
-			const response = await axios.post('http://localhost:3000/auth/login', {
+			const response = await axios.post(`${API_URL}/auth/login`, {
 				email,
 				password,
 			});
@@ -31,7 +32,13 @@ const Login = () => {
 	return (
 		<div className="login">
 
+		
+
 			<div>
+				<div className='d-flex justify-content-end'>
+					<h2 onClick={() => navigate('/Inicio')}
+					style={{color:'black', textAlign:'end', cursor:'pointer',}}>x</h2>
+				</div>
 				<h1>Acceso Administrativo</h1>
 				<p>
 					Ingresa tu usuario y contraseña para acceder al panel de

@@ -12,9 +12,7 @@ pnpm-debug.log*
 .env
 .env.*
 
-# Uploaded files (no versionar)
-uploads/
-uploads/**
+
 
 # Build / output
 dist/

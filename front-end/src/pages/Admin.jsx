@@ -3,9 +3,12 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+const API_URL = import.meta.env.VITE_API_URL
+
+
 
 const api = axios.create({
-	baseURL: 'http://localhost:3000',
+	baseURL: import.meta.env.VITE_API_URL,
 });
 
 
@@ -251,7 +254,7 @@ return (
                         >
 
                             <img
-                                src={`http://localhost:3000${lider.image}`}
+                                src={`${API_URL}${lider.image}`}
                                 alt={lider.nombre}
                             />
 
@@ -365,7 +368,7 @@ return (
                     >
 
                         <img
-                            src={`http://localhost:3000${foto.image}`}
+                            src={`${API_URL}${foto.image}`}
                             alt=""
                         />
 

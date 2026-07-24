@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-const BACKEND_URL = 'http://localhost:3000';
+const API_URL = import.meta.env.VITE_API_URL
 import './style/galeria.css'
 
 const Galeria = () => {
@@ -14,7 +14,7 @@ const Galeria = () => {
 
 	useEffect(() => {
 		axios
-			.get(`${BACKEND_URL}/galeria`)
+			.get(`${API_URL}/galeria`)
 			.then((response) => {
 				setImagenes(response.data);
 				setLoading(false);
@@ -76,7 +76,7 @@ const Galeria = () => {
 
 	const getImageUrl = (src) => {
 		if (!src) return '';
-		return src.startsWith('/') ? `${BACKEND_URL}${src}` : src;
+		return src.startsWith('/') ? `${API_URL}${src}` : src;
 	};
 
 	const imageSrc = currentImage ? getImageUrl(currentImage.image) : '';
