@@ -25,11 +25,12 @@ app.use(
 
 app.use(
 	cors({
-		origin: 'https://ijre-kjl3djlhw-andres-arturos-projects.vercel.app', 
+		origin: 'http://localhost:5173', 
 		credentials: true,
 	}),
 );
 
+// https://ijre-hrxn4sr4g-andres-arturos-projects.vercel.app
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
