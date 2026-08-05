@@ -67,7 +67,7 @@ const Footer = () => {
 
                             <li>
                                 <div className="contact-icon">
-                                    
+                                    🚩
                                 </div>
 
                                 <div>
@@ -79,11 +79,11 @@ const Footer = () => {
                             <li>
 
                                 <div className="contact-icon">
-                                    
+                                    📞
                                 </div>
 
                                 <div>
-                                    (+57)   300 000 0000
+                                    (+57)   310 764 7687
                                 </div>
 
                             </li>
@@ -91,11 +91,11 @@ const Footer = () => {
                             <li>
 
                                 <div className="contact-icon">
-                                    
+                                    ⛪
                                 </div>
 
                                 <div>
-                                    iglesia@email.com
+                                    iejreofi@gmail.com
                                 </div>
 
                             </li>

@@ -2,16 +2,63 @@ import { useState } from "react";
 import "./style/iglesias.css";
 
 function Iglesias() {
-    const [iglesiaInfo, setIglesiaInfo] = useState("Cicuco");
+    const [iglesiaInfo, setIglesiaInfo] = useState("Calvary");
 
     const iglesias = [
+        "Calvary",
+        "La Puerta",
         "Cicuco",
         "Magangué",
         "Santa Ana",
-        "San Andres de Sotavento",
     ];
 
     const info = [
+        {
+            ubicacion: "Calvary",
+            nombre: "Calvary",
+            direccion:
+                "Santa Marta Cr 21 # 29F-17 Av del Ferrocarril Los Faroles",
+            culto: {
+                domingo: "Domingo - Estudio Bíblico 8:00 AM y Servicio de Adoración 9:00 AM",
+                lunes: "",
+                martes: "",
+                miercoles: "Miércoles - Estudios teológicos 6:30 PM",
+                jueves: "",
+                viernes: "Viernes - Oración 7:00 PM",
+                sabado: "",
+            },
+            pastor: "Edison Flores",
+            telPastor: {
+                tel1: "(312) 650-6493 (WhatsApp)",
+                tel2: "",
+            },
+            emailPastor: "pastoreedfz@gmail.com",
+            imagen:
+                "/img/calvary.png",
+        },
+        {
+            ubicacion: "La Puerta",
+            nombre: "La Puerta",
+            direccion:
+                "Santa Marta Cra 4 # 32- 66 Manzanares",
+            culto: {
+                domingo: "Domingo - Escuela Dominical 8:00 AM | Culto 9:15 AM",
+                lunes: "",
+                martes: "",
+                miercoles: "Miércoles - Oración y Estudio Bíblico (Virtual) 6:00 PM",
+                jueves: "",
+                viernes: "",
+                sabado: "",
+            },
+            pastor: "Anciano Gobernante Hector Hernandez | Anciano Gobernante Eber Enrique Navarro Morales",
+            telPastor: {
+                tel1: "(300) 482 2626 (WhatsApp Hector Hernandez)",
+                tel2: "(311) 659 5646 (WhatsApp Eber Navarro)",
+            },
+            emailPastor: "iglesiareformadalapuerta@gmail.com",
+            imagen:
+                "/img/laPuerta.png",
+        },
         {
             ubicacion: "Cicuco",
             nombre: "Iglesia Evangélica Príncipe de Paz",
@@ -33,7 +80,7 @@ function Iglesias() {
             },
             emailPastor: "jobdavid19@hotmail.com",
             imagen:
-                "https://images.squarespace-cdn.com/content/v1/5cc47111fd67936ea7134b21/1629392314112-X0XLBP37GYCFQAC44F9J/cicuco.jpg?format=500w",
+                "/img/cicuco.jfif",
         },
         {
             ubicacion: "Magangué",
@@ -41,22 +88,22 @@ function Iglesias() {
             direccion:
                 "Sector Punta de Cartagena Calle Buenos Aires Carrera 6 #10-39",
             culto: {
-                domingo: "Domingo - Culto 9:30 AM",
+                domingo: "Domingo - Culto 3:00 PM",
                 lunes: "",
                 martes: "",
                 miercoles: "",
-                jueves: "Jueves - Culto 7:00 PM",
+                jueves: "",
                 viernes: "",
                 sabado: "",
             },
-            pastor: "Yo que se",
+            pastor: "Job David Quintero Martínez",
             telPastor: {
                 tel1: "(300) 551-0385 (WhatsApp)",
                 tel2: "(323) 588-3369 (Celular)",
             },
             emailPastor: "jobdavid19@hotmail.com",
             imagen:
-                "https://images.squarespace-cdn.com/content/v1/5cc47111fd67936ea7134b21/1629386879989-622WLFCUSRRKVOVUXSAI/zdenek-machacek-P4n7NQNOmFU-unsplash.jpg?format=500w",
+                "/img/magangue.jfif",
         },
         {
             ubicacion: "Santa Ana",
@@ -78,29 +125,7 @@ function Iglesias() {
             },
             emailPastor: "famlopin@gmail.com",
             imagen:
-                "https://images.squarespace-cdn.com/content/v1/5cc47111fd67936ea7134b21/1629392326237-S4ZN35U3EAVWGBMV0TAR/Screen+Shot+2021-08-19+at+11.53.06+AM.png?format=500w",
-        },
-        {
-            ubicacion: "San Andres de Sotavento",
-            nombre: "Iglesia Evangélica Príncipe de Paz",
-            direccion: "San Andrés de Sotavento",
-            culto: {
-                domingo: "Domingo - Culto 9:30 AM",
-                lunes: "",
-                martes: "",
-                miercoles: "",
-                jueves: "",
-                viernes: "",
-                sabado: "",
-            },
-            pastor: "Yo que se",
-            telPastor: {
-                tel1: "(300) 551-0385 (WhatsApp)",
-                tel2: "",
-            },
-            emailPastor: "jobdavid19@hotmail.com",
-            imagen:
-                "https://images.squarespace-cdn.com/content/v1/5cc47111fd67936ea7134b21/1556557901073-RC8KYJE5ZAHXSCQG4MNZ/piedecuesta.jpg?format=500w",
+                "/img/santaAna.jfif",
         },
     ];
 
@@ -109,13 +134,8 @@ function Iglesias() {
     );
 
     return (
-        <main className="iglesias container-fluid">
-
-            <h4>
-                <strong>
-                    <span className="inicial">C</span>omunidad Eclesiástica
-                </strong>
-            </h4>
+        <main className="iglesias container">
+            <i>Comunidad</i>
 
             <h1>
                 Somos una familia que ama la
@@ -124,12 +144,10 @@ function Iglesias() {
             </h1>
 
             <p className="descripcion">
-                <i>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Non dignissimos mollitia eos ipsam? Perferendis debitis
                     necessitatibus numquam quis voluptates quaerat illo tempora
                     ex?
-                </i>
             </p>
 
             <div className="container">
@@ -147,7 +165,7 @@ function Iglesias() {
                                     listStyle: "none",
                                     borderBottom:
                                         iglesia === iglesiaInfo
-                                            ? "3px solid #01069b"
+                                            ? "3px solid #000000"
                                             : "none",
                                     fontWeight:
                                         iglesia === iglesiaInfo
@@ -168,7 +186,7 @@ function Iglesias() {
 
                     <div className="contenedor">
 
-                        <div className="imagen">
+                        <div className="iglesiaImagen">
 
                             <img
                                 src={iglesiaActual.imagen}
@@ -183,7 +201,6 @@ function Iglesias() {
 
                             <p>
                                 <strong>Dirección</strong>
-                                <br />
                                 <span>{iglesiaActual.direccion}</span>
                             </p>
 
@@ -210,6 +227,7 @@ function Iglesias() {
                                     <span>{iglesiaActual.telPastor.tel2}</span>
                                 )}
 
+                                <strong>Email</strong>
                                 <span>{iglesiaActual.emailPastor}</span>
 
                             </p>

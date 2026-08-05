@@ -28,7 +28,8 @@ const Ministerios = () => {
             ejesDeTrabajo : {
                 educacion : 'Un espacio de comunión, oración y estudio bíblico para las mujeres',
                 servicio : 'Un espacio de comunión, oración y estudio bíblico para las mujeres'
-            }
+            },
+            imagen:'/img/logo.jpeg'
         },
         {
             ministerio: 'Jovenes',
@@ -38,7 +39,8 @@ const Ministerios = () => {
             ejesDeTrabajo : {
                 educacion : 'Un espacio de comunión, oración y estudio bíblico para las mujeres',
                 servicio : 'Un espacio de comunión, oración y estudio bíblico para las mujeres'
-            }
+            },
+            imagen: '/img/logo2.jpeg'
         },
         {
             ministerio: 'Niños',
@@ -63,8 +65,8 @@ const Ministerios = () => {
             <p className='col-9'>
                     Tenemos espacios para todas las etapas de la vida. Cada ministerio está comprometido con el crecimiento en la fe y el amor fraternal.
             </p>
-                
-                <div className="list-ministerios d-flex gap-5 text-white justify-content-center">
+
+                 <div className="list-ministerios">
                     {ministerios.map((ministerio, index) => (
                 <div key={index}>
                     <p onClick={() => setMins(ministerio)}
@@ -73,8 +75,7 @@ const Ministerios = () => {
                             textAlign:'center',
                             width:'100',
                             alignItems:'center',
-                            borderBottom: mins === ministerio ? "3px solid #ffd700" : "none",
-                            fontWeight: mins === ministerio ? "bold" : "normal"
+                            borderBottom: mins === ministerio ? "3px solid #000000" : "none",
                         }} >{ministerio}
                     </p>
                 </div>
@@ -82,45 +83,32 @@ const Ministerios = () => {
                 </div>
 
                 {ministerioActual && (
-                    <main>
-                        <h3>Ministerio {ministerioActual.ministerio}</h3>
-                        <div className="row  m-0 d-flex " style={{ minHeight: "500px" }}>
+                    <main className="col-12 p-3">
+                        <div className="">
     
-                            <div className="col-md-8 d-flex flex-wrap gap-2 p-0">
+                            <div className="primero col-12 d-flex flex-wrap justify-content-between">
 
-                                <div className="info-card col-md-5  p-3">
+                                <div className="mision info-card col-12 col-md-5 border-right">
                                     <h3>Misión</h3>
                                     <p>{ministerioActual.mision}</p>
                                 </div>
-
-                                <div className="info-card col-md-5  p-3">
+                                <div className="vision info-card col-12 col-md-5">
                                     <h3>Visión</h3>
                                     <p>{ministerioActual.vision}</p>
                                 </div>
-
-                                <div className="info-card col-md-10  p-3">
-                                    <h3>Plan de Trabajo</h3>
+                            </div>
+                            <hr />
+                            <div className='segundo d-flex justify-content-between'>
+                                <div className="info-card col-md-7">
+                                    <h3>Vida Comunitaria</h3>
                                     <p>{ministerioActual.planDeTrabajo}</p>
                                 </div>
-
-                            </div>
-
-
-                            <div className="col-md-4 border rounded  d-flex align-items-center justify-content-center p-0 overflow-hidden">
-                                <img
-                                    src={ministerioActual.imagen}
-                                    alt={ministerioActual.nombre}
-                                    className="img-fluid w-100 h-100 p-2 rounded"
-                                    style={{
-                                        objectFit: "cover"
-                                    }}
-                                />
+                                <img className='col-md-4 border p-2' src={ministerioActual.imagen} alt="" />
                             </div>
                         </div>
                     </main>
                 )}
-                
-            
+
         </main>
         </>
     )

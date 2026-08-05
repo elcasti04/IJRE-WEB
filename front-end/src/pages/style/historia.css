@@ -1,8 +1,6 @@
 .nuestra-historia {
     color:#000;
     font-family:"DM Serif Display",serif;
-    padding-left:100px;
-    padding-right:100px;
     width:100%;
 }
 
@@ -19,7 +17,7 @@
 }
 
 /* ===================== TABLETS ===================== */
-@media (max-width: 992px){
+@media (max-width: 960px) {
 
     .nuestra-historia{
         padding-left:50px;
@@ -57,7 +55,7 @@
 
 
 /* ===================== CELULARES ===================== */
-@media (max-width:768px){
+@media (max-width: 480px) {
 
     .nuestra-historia{
         padding-left:20px;
@@ -96,7 +94,7 @@
 
 
 /* ===================== CELULARES PEQUEÑOS ===================== */
-@media (max-width:480px){
+@media (max-width: 240px) {
 
     .nuestra-historia{
         padding-left:12px;

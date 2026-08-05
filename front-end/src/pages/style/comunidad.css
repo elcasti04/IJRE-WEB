@@ -1,9 +1,8 @@
 .comunidad{
     color:#000;
     font-family:"DM Serif Display",serif;
-    padding-left:100px;
-    padding-right:100px;
     width:100%;
+    padding: 100px 0;
 }
 
 .comunidad h1{
@@ -24,7 +23,7 @@
 }
 
 /* Tablets */
-@media (max-width: 992px){
+@media (max-width: 960px) {
 
     .comunidad{
         padding-left:50px;
@@ -48,7 +47,7 @@
 }
 
 /* Celulares */
-@media (max-width:768px){
+@media (max-width: 480px) {
 
     .comunidad{
         padding-left:20px;
@@ -76,7 +75,7 @@
 }
 
 /* Celulares pequeños */
-@media (max-width:480px){
+@media (max-width: 240px) {
 
     .comunidad{
         padding-left:12px;

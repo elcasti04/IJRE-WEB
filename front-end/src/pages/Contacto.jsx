@@ -31,7 +31,7 @@ const Contacto = () => {
     <main className="contacto container-fluid col">
       <h1>¡Queremos saber de ti!</h1>
 
-      <div className="container-fluid d-flex justify-content-around">
+      <div className="container-fluid d-flex justify-content-around align-items-center">
         <form
           ref={form}
           onSubmit={enviarCorreo}
@@ -71,17 +71,56 @@ const Contacto = () => {
           </button>
         </form>
 
-        <div className="contac col-12 col-md-6">
-          <h3 className="text-center">Redes</h3>
+      <div className="donaciones container">
+        <div className="d-flex flex-column justify-content-center">
+            <h3 className="redes text-center">Donaciones</h3>
+
+            <div className="redes p-3">
+              <p>
+                Tu aporte es una semilla que nos permite seguir expandiendo el Reino de Dios. 
+                Cada donación, sin importar su tamaño, contribuye al crecimiento del 
+                ministerio y al cumplimiento de la misión que Dios nos ha encomendado.
+                <hr />
+                <div className="d-flex justify-content-around align-items-center">
+                <fieldset>
+                  <legend>Cuenta de Ahorros Bancolombia</legend>
+                  ° 50639956986
+                </fieldset>
+                <fieldset>
+                  <legend>Nequi</legend>
+                  ° 310 764 7687
+                </fieldset>
+                <fieldset>
+                  <legend>Daviplata</legend>
+                  ° 310 764 7687
+                </fieldset>
+                </div>
+                <hr />
+                <span>
+                  "Cada uno dé como propuso en su corazón: no con tristeza, ni por necesidad, porque Dios ama al dador alegre."
+                  <br />
+                  2 Corintios 9:7</span>
+              </p>
+            </div>
+          </div>
+      </div>
+      </div>
+      <br />
+
+      <div className="contac col-12 col-md-9">
+          <h3 className="redes text-center">Redes</h3>
 
           <div className="redes d-flex justify-content-around p-4">
-            <p className="logoApp">
+            <p className="logoApp"
+            onClick={() => window.open("https://wa.me/573107647687", "_blank")}
+            >
               <img
                 width="70"
                 height="70"
                 src="https://img.icons8.com/color/100/whatsapp--v1.png"
                 alt="WhatsApp"
               />
+              whatsApp
             </p>
 
             <p className="logoApp">
@@ -91,6 +130,7 @@ const Contacto = () => {
                 src="https://img.icons8.com/color/100/instagram-new--v1.png"
                 alt="Instagram"
               />
+              Instagram
             </p>
 
             <p className="logoApp">
@@ -100,30 +140,22 @@ const Contacto = () => {
                 src="https://img.icons8.com/color/100/facebook-new.png"
                 alt="Facebook"
               />
+              facebook
             </p>
 
-            <p className="logoApp">
+            <p className="logoApp"
+            onClick={() => window.open('https://www.youtube.com/@JesucristoReyEternooficial')}
+            >
               <img
                 width="70"
                 height="70"
                 src="https://img.icons8.com/color/100/youtube-play.png"
                 alt="YouTube"
               />
-            </p>
-          </div>
-
-          <div className="d-flex flex-column justify-content-center">
-            <h3 className="text-center">Donaciones</h3>
-
-            <p className="p-3">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id
-              molestiae amet omnis, optio possimus ab atque inventore fugiat
-              deserunt est hic sapiente voluptatibus nisi unde pariatur iste
-              facere a veritatis!
+              Youtube
             </p>
           </div>
         </div>
-      </div>
     </main>
   );
 };

@@ -47,8 +47,8 @@ const Lideres = () => {
             <section className="lideres">
                 <div className="loading">
                     <img
-                        src="../../public/iconos/icons8-load.gif"
-                        alt="Cargando..."
+                        src="/iconos/icons8-load.gif"
+                        alt="icono de carga"
                     />
                 </div>
             </section>
@@ -71,7 +71,7 @@ const Lideres = () => {
             <section className="lideres">
 
                 <div className="titulo-lideres">
-
+                    <i>Lideres</i>
                     <h1>
                         Personas que sirven con amor
                     </h1>
@@ -79,7 +79,9 @@ const Lideres = () => {
                     <p>
                         Dios ha levantado hombres y mujeres comprometidos con
                         Su obra para pastorear, enseñar y acompañar a nuestra
-                        congregación. Conoce a quienes dedican su vida a servir
+                        congregación. 
+                        <br />
+                        Conoce a quienes dedican su vida a servir
                         con humildad y amor.
                     </p>
 
@@ -122,14 +124,14 @@ const Lideres = () => {
                                         {lider.nombre}
                                     </h3>
 
-                                    <button
+                                    <p
                                         className="btn-lider"
                                         onClick={() =>
                                             setLiderSeleccionado(lider)
                                         }
                                     >
                                         Conocer más
-                                    </button>
+                                    </p>
 
                                 </div>
 

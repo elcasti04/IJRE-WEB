@@ -4,40 +4,31 @@ const Inicio = () => {
 	return (
 		<>
 			<div
-				className="Inicio text-center col d-flex flex-column justify-content-center gap-3"
+				className="Inicio text-center col "
 			>
 				
-				<h4><i>Bienvenidos</i></h4>
 				<h1 className="inicio-titulo">
 					Iglesia Evangelica <br /> Jesucristo Rey Eterno
 				</h1>
 				
 				<h3 className='siglas'>IEJRE - IREP</h3>
 
+				<div className='espacio'>
+
+				</div>
+				<p className='cita'>
+					Porque de él, y por él, y para él, <br /> son todas las cosas.
+					A él sea la gloria por los siglos. 
+					<br /> Amén.
+				</p>
+				<h4>Romanos 11:36</h4>
 				<br />
-				<div className='cita'>
-					<h4 className=' '>Romanos 11:36</h4>
-					<hr />
-					<p>
-						<i>
-							Porque de él, y por él, y para él, son todas las cosas. 
-							<br />
-							A él sea la gloria por los siglos. Amén.
-						</i>
-					</p>
-					<h3>Soli Deo Gloria</h3>
-					<br />
-					<div className='botones'>
-						
-						
-						<button className='bg-white text-primary' onClick={() => (window.location.href = '#Nosotros')}>
-							Conócenos
-						</button>
-						<button className='bg-primary' onClick={() => (window.location.href = '#Contacto')}>
-							Contáctanos
-						</button>
-					</div>
-				</div>				
+
+				<div className='botones'>
+				<h4><a href="#Nosotros">♱ Conocenos ♱</a></h4>
+				<h4><a href="#Contacto">♱ Contactanos ♱</a></h4>
+				<h4><a href="#Videos">♱ Sermones ♱</a></h4>
+				</div>
 			</div>
 			<div className='servicios col'>
 					<ul className='d-flex text-center col-12'>

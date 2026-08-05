@@ -40,17 +40,17 @@ function Header() {
 	return (
 		<>
 			<header className={`head ${showHeader ? 'head-visible' : 'head-hidden'}`}>
-				<img
-					className='logo'
-					onClick={() => setExpandido(true)}
-					src="img/logo.jpeg"
-					alt="Logo de la iglesia"
-				/>
-				<h2 className=' col-6 '><a className='titulo' href="#Inicio">Iglesia Evangelica Jesucristo Rey Eterno</a></h2>
+				<h2 className='col-6 '>
+					<a className='titulo' href="#Inicio">
+						Iglesia Evangelica Jesucristo Rey Eterno
+						<br />
+						<span className='subTitle'>IEJRE - San Pedro - Sucre</span>
+					</a>
+				</h2>
 				
 				<div className='menu-btn '
 					onClick={() => menu ? setMenu(false) : setMenu(true)}>
-					<img src="iconos/menu.png" alt="boton-toogle" />
+					<p>☰</p>
 				</div>
 			</header>
 
@@ -121,10 +121,14 @@ function Header() {
 										
 										<hr />
 										<li style={{ fontSize: '20px' }}>
-										<h4 onClick={() => navigate('/Login')}>
+										<h4 
+										style={{cursor:'pointer'}}
+										onClick={() => navigate('/Login')}>
 											🔴 Login
+											<br />
+											<span style={{fontSize:'15px'}}>personal Autorizado</span>
 										</h4>
-										<p style={{fontSize:'15px'}}>personal Autorizado</p>
+										
 										</li>
 									</ul>
 				</div>

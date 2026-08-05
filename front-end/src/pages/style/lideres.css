@@ -3,9 +3,8 @@
 .lideres{
     color:#000;
     font-family:"DM Serif Display",serif;
-    padding-left:100px;
-    padding-right:100px;
     width:100%;
+    padding: 100pz 0;
 }
 
 
@@ -34,7 +33,11 @@
     font-weight: 100;
 }
 
-
+.lideres i {
+    font-size: 1.5em;
+    width: 80%;
+    font-weight: 400; 
+}
 
 .grid-lideres{
     display:grid;
@@ -47,15 +50,12 @@
 
 
 .card-lider{
-    background:#fff;
-    border-radius:22px;
-    overflow:hidden;
     text-align:center;
     transition:.35s;
     box-shadow:0 15px 40px rgba(0,0,0,.07);
-    border:1px solid #ececec;
     animation:aparecer .7s ease;
-    max-width: 300px;
+    max-width: 250px;
+    border-radius: 12px;
 
 }
 
@@ -65,18 +65,11 @@
 }
 
 
-
-.foto-lider{
-    padding-top:35px;
-}
-
 .foto-lider img{
-    width:170px;
-    height:170px;
-    border-radius:50%;
+    width:100%;
     object-fit:cover;
     border:6px solid #fff;
-    box-shadow:0 12px 25px rgba(0,0,0,.18);
+    border-radius: 12px 12px 0 0;
 }
 
 
@@ -85,9 +78,7 @@
 }
 
 .cargo{
-    display:inline-block;
-    background:#c9a227;
-    color:white;
+    color:rgb(0, 0, 0);
     padding:7px 18px;
     border-radius:30px;
     font-size:.82rem;
@@ -105,21 +96,17 @@
 
 
 .btn-lider{
-    border:none;
-    outline:none;
-    background:#01069b;
-    color:white;
+    color:rgb(0, 0, 0);
     padding:13px 35px;
-    border-radius:40px;
     cursor:pointer;
-    transition:.3s;
     font-size:1rem;
-    font-weight:600;
+    border: 2px solid #000;
 }
 
 .btn-lider:hover{
-    background:#2337d8;
+    background:#13223a;
     transform:scale(1.05);
+    color: #fff;
 }
 
 
@@ -255,7 +242,7 @@
 }
 
 /* ===================== TABLETS ===================== */
-@media (max-width: 992px){
+@media (max-width: 960px) {
 
     .lideres{
         padding-left:40px;
@@ -301,7 +288,7 @@
 
 
 /* ===================== CELULARES ===================== */
-@media (max-width:768px){
+@media (max-width: 480px) {
 
     .lideres{
         padding-left:20px;
@@ -379,7 +366,7 @@
 
 
 /* ===================== CELULARES PEQUEÑOS ===================== */
-@media (max-width:480px){
+@media (max-width: 240px) {
 
     .lideres{
         padding-left:12px;

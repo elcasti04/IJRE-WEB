@@ -7,7 +7,7 @@
 }
 
 body{
-    background:#f5f7fb;
+    background:#fff;
     font-family:Arial, Helvetica, sans-serif;
 }
 
@@ -253,7 +253,7 @@ body{
 
 /*================ RESPONSIVE =================*/
 
-@media(max-width:1100px){
+@media (max-width: 960px) {
 
     .admin-grid{
         grid-template-columns:1fr;
@@ -261,7 +261,7 @@ body{
 
 }
 
-@media(max-width:768px){
+@media (max-width: 480px) {
 
     .admin{
         padding:20px;
@@ -302,7 +302,7 @@ body{
 
 }
 
-@media(max-width:576px){
+@media (max-width: 240px) {
 
     .admin-header h1{
         font-size:1.7rem;

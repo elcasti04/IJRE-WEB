@@ -1,7 +1,6 @@
 .foot{
-    background:linear-gradient(135deg,#060838,#0a1170);
+    background: #14203a;
     color:#fff;
-    padding:70px 0 25px;
     font-family:"DM Serif Display",serif;
 }
 
@@ -33,34 +32,6 @@
     line-height:1.8;
 }
 
-/* Redes */
-
-.social-icons{
-    display:flex;
-    gap:15px;
-    margin-top:25px;
-}
-
-.social-icons a{
-    width:50px;
-    height:50px;
-    border-radius:50%;
-    background:#fff;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    transition:.3s;
-}
-
-.social-icons a:hover{
-    background:#d4af37;
-    transform:translateY(-5px);
-}
-
-.social-icons img{
-    width:24px;
-    height:24px;
-}
 
 /* Contacto */
 
@@ -77,13 +48,13 @@
     margin-bottom:20px;
     color:#ddd;
     font-family:sans-serif;
+    border-bottom: 2px solid white;
 }
 
 .contact-icon{
     width:48px;
     height:48px;
     min-width:48px;
-    background:#fff;
     border-radius:50%;
     display:flex;
     justify-content:center;
@@ -105,7 +76,7 @@
 
 .map-container iframe{
     width:100%;
-    height:320px;
+    height:220px;
     border:none;
 }
 
@@ -126,7 +97,7 @@
 
 /* Tablet */
 
-@media (max-width: 992px) {
+@media (max-width: 960px) {
 
     .foot{
         text-align:center;
@@ -149,7 +120,7 @@
 
 /* Celular */
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
 
     .foot{
         padding:50px 20px;
@@ -167,7 +138,7 @@
 
 /* Celulares pequeños */
 
-@media (max-width: 576px) {
+@media (max-width: 240px) {
 
     .footer-title{
         font-size:1.5rem;

@@ -1,31 +1,23 @@
 .Inicio{
     background-image:
-        linear-gradient(rgba(0,17,255,.1), rgba(0,0,0,.9)),
-        url("/img/fotoIglesia.jpg");
+        linear-gradient(rgba(7, 7, 7, 0.1), rgba(6, 6, 6, 0.6)),
+        url("/img/fondo-4.jpeg");
     background-size:cover;
     background-position:center;
     background-repeat:no-repeat;
-
+    padding-top: 40px;
     width:100%;
     min-height:100vh;
-
-    padding:30px;
-
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-
-    text-align:center;
-
     color:#fff;
     font-family:"DM Serif Display",serif;
+}
 
-    border-radius:0 0 12px 12px;
+.espacio {
+    height: 15vh;
 }
 
 .Inicio h1{
-    font-size:4.5rem;
+    font-size:5rem;
     line-height:1.15;
 }
 
@@ -40,21 +32,9 @@
 }
 
 .cita{
-    max-width:900px;
-}
-
-.cita i{
-    font-family:sans-serif;
-    font-size:1.35rem;
-    line-height:1.8;
-}
-
-.Inicio hr{
-    width:150px;
-    height:4px;
-    border:none;
-    background:white;
-    margin:15px auto;
+    font-size:1.5rem;
+    margin:0 auto;
+    padding:20px 0;
 }
 
 /*==================
@@ -64,21 +44,22 @@
 .botones{
     display:flex;
     justify-content:center;
-    gap:25px;
+    gap:45px;
     flex-wrap:wrap;
 }
 
-.botones button{
-    width:170px;
+.botones h4{
     height:45px;
-    border:none;
-    border-radius:10px;
-    font-weight:600;
     transition:.3s;
+    border-bottom: 2px solid #fff;
 }
 
-.botones button:hover{
+.botones h4:hover{
     transform:translateY(-2px);
+}
+.botones a{
+    text-decoration:none;
+    color:#fff;
 }
 
 /*==================
@@ -97,6 +78,7 @@
     list-style:none;
     padding:0;
     margin:0;
+    border-bottom: 2px solid black;
 }
 
 .servicios li{
@@ -115,7 +97,7 @@
       TABLET
 ===================*/
 
-@media (max-width:992px){
+@media (max-width: 960px) {
 
     .Inicio{
         min-height:90vh;
@@ -140,7 +122,7 @@
       CELULAR
 ===================*/
 
-@media (max-width:768px){
+@media (max-width: 480px) {
 
     .Inicio{
         min-height:100vh;
@@ -202,7 +184,7 @@
   CELULARES PEQUEÑOS
 ===================*/
 
-@media (max-width:480px){
+@media (max-width: 240px) {
 
     .Inicio{
         padding:25px 15px;

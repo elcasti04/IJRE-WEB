@@ -21,7 +21,7 @@ import Academia from './pages/Academia';
 import Footer from './pages/footer';
 import Historia from './pages/historia';
 import Comunidad from './pages/comunidad';
-// import ScrollToTop from './scrollToTop';
+import ScrollToTop from './scrollToTop';
 
 function Home() {
 	return (
@@ -67,7 +67,7 @@ function Home() {
 function App() {
 	return (
 		<>
-		{/* <ScrollToTop /> */}
+		<ScrollToTop />
 		<Routes>
 			<Route path="/login" element={<Login />} />
 			<Route path="/*" element={<Home />} />

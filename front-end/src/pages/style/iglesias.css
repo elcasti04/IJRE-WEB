@@ -1,195 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap");
+
 .iglesias{
     width:100%;
-    padding:100px;
-    color:#000;
+    color:#111;
+    padding: 100px 0;
     font-family:"DM Serif Display",serif;
 }
 
-.iglesias h4{
-    color:#01069b;
-    margin-bottom:10px;
+.iglesias i {
+    font-size: 1.5em;
+    width: 80%;
+    font-weight: 400; 
 }
 
 .iglesias h1{
-    font-size:3rem;
+    font-size:clamp(2.2rem,4vw,3.2rem);
     margin-bottom:20px;
+    line-height:1.2;
 }
 
 .descripcion{
-    max-width:900px;
+    max-width:850px;
     font-family:sans-serif;
-    font-size:1.1rem;
+    font-size:1.08rem;
     line-height:1.8;
-    margin-bottom:40px;
+    margin-bottom:45px;
 }
 
-.contenedor{
-    width:100%;
-}
-
-/* ==========================
-      LISTA DE IGLESIAS
-========================== */
+/*=========================
+      MENU
+=========================*/
 
 .lista-iglesias{
     display:flex;
-    gap:15px;
+    gap:25px;
     overflow-x:auto;
-    padding-bottom:12px;
-    border-bottom:2px solid #01069b;
-    margin-bottom:35px;
-    scrollbar-width:thin;
+    border-bottom:1px solid #ddd;
+    margin-bottom:45px;
+    scrollbar-width:none;
 }
 
 .lista-iglesias::-webkit-scrollbar{
-    height:7px;
-}
-
-.lista-iglesias::-webkit-scrollbar-thumb{
-    background:#01069b;
-    border-radius:20px;
+    display:none;
 }
 
 .lista-iglesias ul{
-    margin:0;
     padding:0;
-    flex-shrink:0;
+    margin:0;
 }
 
 .lista-iglesias li{
     list-style:none;
-    padding:10px 20px;
-    border-radius:30px;
-    transition:.3s;
+    padding:14px 0;
     cursor:pointer;
     white-space:nowrap;
+    transition:.3s;
+    font-family:sans-serif;
+    font-weight:600;
 }
 
 .lista-iglesias li:hover{
-    background:#f2f2f2;
+    color:#3d5afe;
 }
 
-/* ==========================
-        CONTENIDO
-========================== */
+/*=========================
+      CONTENIDO
+=========================*/
 
-.contenedor-{
+.contenedor{
     display:flex;
-    justify-content:space-between;
+    gap:40px;
     align-items:flex-start;
-    gap:35px;
 }
 
-/* ==========================
-          IMAGEN
-========================== */
+/*=========================
+      IMAGEN
+=========================*/
 
-.imagen{
+.iglesiaImagen{
     flex:1;
 }
 
-.imagen img{
+.iglesiaImagen img{
     width:100%;
-    height:500px;
-    display:block;
+    max-width:620px;
+    height:430px;
     object-fit:cover;
     border-radius:15px;
-    box-shadow:0 10px 30px rgba(0,0,0,.15);
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
 }
 
-/* ==========================
-        INFORMACIÓN
-========================== */
+/*=========================
+      TARJETA
+=========================*/
 
 .infor{
-    width:380px;
-    background:#111827;
+    flex:1;
+    background:#14203a;
     color:#fff;
-    padding:25px;
-    border-radius:15px;
-    box-shadow:0 15px 35px rgba(0,0,0,.25);
+    padding:30px;
+    border-radius:16px;
 }
 
 .infor h2{
-    color:#fff;
-    margin-bottom:20px;
-    font-size:1.7rem;
+    margin-bottom:25px;
 }
 
 .infor p{
-    color:#fff;
     font-family:sans-serif;
-    margin-bottom:20px;
     line-height:1.7;
 }
 
 .infor strong{
     display:block;
+    color:#6eb2ff;
     margin-bottom:8px;
-    color:#7cb7ff;
+    margin-top:15px;
 }
 
 .infor span{
     display:block;
     color:#ddd;
-    font-size:.95rem;
-    margin-bottom:4px;
-    word-break:break-word;
+    margin-bottom:5px;
 }
 
-/* ==========================
-          TABLET
-========================== */
+/*=========================
+      TABLET
+=========================*/
 
-@media (max-width:992px){
+@media(max-width:992px){
 
     .iglesias{
-        padding:60px 30px;
+        padding:70px 20px;
     }
 
     .iglesias h1{
-        font-size:2.5rem;
+        text-align:center;
     }
 
     .descripcion{
-        max-width:100%;
+        text-align:center;
+        margin:auto auto 40px;
     }
 
-    .contenedor-{
+    .contenedor{
         flex-direction:column;
     }
 
-    .imagen{
-        width:100%;
-    }
-
-    .imagen img{
-        height:380px;
-    }
-
-    .infor{
-        width:100%;
+    .iglesiaImagen img{
+        max-width:100%;
+        height:360px;
     }
 
 }
 
-/* ==========================
-          CELULAR
-========================== */
+/*=========================
+      MOVIL
+=========================*/
 
-@media (max-width:768px){
+@media(max-width:768px){
 
     .iglesias{
-        padding:40px 18px;
+        padding:60px 15px;
     }
 
-    .iglesias h4{
+    .iglesias i,
+    .iglesias h1{
         text-align:center;
     }
 
     .iglesias h1{
         font-size:2rem;
-        text-align:center;
     }
 
     .descripcion{
@@ -198,86 +179,43 @@
     }
 
     .lista-iglesias{
-        gap:10px;
+        gap:18px;
     }
 
-    .lista-iglesias li{
-        padding:8px 15px;
-        font-size:.95rem;
-    }
-
-    .contenedor-{
-        gap:20px;
-    }
-
-    .imagen{
-        width:100%;
-    }
-
-    .imagen img{
-        width:100%;
+    .iglesiaImagen img{
         height:260px;
-        object-fit:cover;
     }
 
     .infor{
-        width:100%;
-        padding:20px;
-    }
-
-    .infor h2{
-        font-size:1.4rem;
+        padding:22px;
     }
 
 }
 
-/* ==========================
-      CELULARES PEQUEÑOS
-========================== */
+/*=========================
+   MOVILES PEQUEÑOS
+=========================*/
 
-@media (max-width:480px){
+@media(max-width:480px){
 
     .iglesias{
-        padding:30px 12px;
+        padding:45px 10px;
     }
 
     .iglesias h1{
-        font-size:1.6rem;
+        font-size:1.7rem;
     }
 
-    .descripcion{
-        font-size:.95rem;
-    }
-
-    .lista-iglesias{
-        gap:8px;
-    }
-
-    .lista-iglesias li{
-        padding:8px 12px;
-        font-size:.85rem;
-    }
-
-    .imagen img{
-        width:100%;
-        height:200px;
+    .iglesiaImagen img{
+        height:220px;
     }
 
     .infor{
-        width:100%;
-        padding:15px;
+        padding:18px;
     }
 
     .infor h2{
-        font-size:1.2rem;
-    }
-
-    .infor p{
-        font-size:.95rem;
-    }
-
-    .infor span{
-        font-size:.85rem;
+        font-size:1.4rem;
     }
 
 }

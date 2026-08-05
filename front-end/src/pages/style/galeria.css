@@ -1,6 +1,5 @@
 .galeria {
     font-family: "DM Serif Display", serif;
-    padding: 100px;
     width: 100%;
     color: black;
     font-size: 1.1em;
@@ -174,7 +173,7 @@
     font-size: 1rem;
     line-height: 1.7;
 }
-@media (max-width: 992px){
+@media (max-width: 960px) {
 
     .galeria{
         padding:60px 30px;
@@ -219,7 +218,7 @@
         CELULARES
 ========================== */
 
-@media (max-width:768px){
+@media (max-width: 480px) {
 
     .galeria{
         padding:40px 20px;
@@ -278,7 +277,7 @@
     CELULARES PEQUEÑOS
 ========================== */
 
-@media (max-width:480px){
+@media (max-width: 240px) {
 
     .galeria{
         padding:30px 15px;
